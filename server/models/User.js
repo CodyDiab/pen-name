@@ -23,6 +23,15 @@ const userSchema = new Schema({
         required: true,
         minlength: 5
     },
+    about: {
+        type: String,
+        minLength: 1,
+        maxlength: 280
+    },
+    linkToPortfolio: {
+       type: String,
+       match:[/^(ftp|http|https):\/\/[^ "]+$/, 'Must be a url!']
+    },
     post: [
         {type: mongoose.Schema.Types.ObjectId,
         ref: 'Post'
