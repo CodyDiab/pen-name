@@ -1,8 +1,8 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bycrypt');
 
-const followingSchema = require('./Following');
-const followersSchema = require('./Followers')
+//const followingSchema = require('./Following');
+//const followersSchema = require('./Followers')
 
 const userSchema = new Schema({
     userName: {
