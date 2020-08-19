@@ -75,9 +75,9 @@ const userSchema = new Schema({
   };
   
   // get follower count
-  userSchema.virtual('followerCount').get(function() {
-    return this.followers.length;
-  });
+  // userSchema.virtual('followerCount').get(function() {
+  //   return this.followers.length;
+  // });
   //get following count
   userSchema.virtual('followingCount').get(function() {
       return this.following.length;
