@@ -1,9 +1,8 @@
-const mongoose = require('mongoose');
-const {Schema} = mongoose;
+const { Schema, model } = require('mongoose');
 const bcrypt = require('bycrypt');
 
-const followingSchema = require('./Following');
-const followersSchema = require('./Followers')
+//const followingSchema = require('./Following');
+//const followersSchema = require('./Followers')
 
 const userSchema = new Schema({
     userName: {
@@ -29,20 +28,27 @@ const userSchema = new Schema({
         maxlength: 280
     },
     linkToPortfolio: {
-       type: String,
-       match:[/^(ftp|http|https):\/\/[^ "]+$/, 'Must be a url!']
+        type: String,
+        match:[/^(ftp|http|https):\/\/[^ "]+$/, 'Must be a url!']
     },
-    post: [
-        {type: mongoose.Schema.Types.ObjectId,
+    posts: [
+        {
+        type: Schema.Types.ObjectId,
         ref: 'Post'
         }
-     ],
-    following:[
-      followingSchema
     ],
-    followers:[
-      followersSchema
+    following: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
     ]
+    // following:[
+    //   followingSchema
+    // ],
+    // followers:[
+    //   followersSchema
+    // ]
 
 },
 {
@@ -54,7 +60,7 @@ const userSchema = new Schema({
 );
   
   // set up pre-save middleware to create password
-   userSchema.pre('save', async function(next) {
+  userSchema.pre('save', async function(next) {
     if (this.isNew || this.isModified('password')) {
       const saltRounds = 10;
       this.password = await bcrypt.hash(this.password, saltRounds);
@@ -77,6 +83,6 @@ const userSchema = new Schema({
       return this.following.length;
   });
 
-  const User = mongoose.model('User', userSchema);
+  const User = model('User', userSchema);
 
   module.exports = User;
