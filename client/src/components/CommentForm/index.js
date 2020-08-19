@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { ADD_REACTION } from '../../utils/mutations';
+import { ADD_COMMENT } from '../../utils/mutations';
 import { useMutation } from '@apollo/react-hooks';
 
 
 
-const ReactionForm = ({ postId }) => {
+const CommentForm = ({ postId }) => {
 
-    const [reactionBody, setBody] = useState('');
+    const [commentBody, setBody] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
     
-    const [addReaction, { error }] = useMutation(ADD_REACTION);
+    const [addComment, { error }] = useMutation(ADD_COMMENT);
 
     const handleChange = event => {
         if (event.target.value.length <= 280) {
@@ -22,8 +22,8 @@ const ReactionForm = ({ postId }) => {
             event.preventDefault();
           
             try {
-              await addReaction({
-                variables: { reactionBody, postId }
+              await addComment({
+                variables: { commentBody, postId }
               });
           
               // clear form value
@@ -45,8 +45,8 @@ const ReactionForm = ({ postId }) => {
         onSubmit={handleFormSubmit}
       >
         <textarea
-          placeholder="Leave a reaction to this post..."
-          value={reactionBody}
+          placeholder="Leave a comment on this post..."
+          value={commentBody}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>
@@ -59,4 +59,4 @@ const ReactionForm = ({ postId }) => {
   );
 };
 
-export default ReactionForm;
+export default CommentForm;

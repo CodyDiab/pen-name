@@ -52,9 +52,9 @@ db.once('open', async () => {
     createdPosts.push(createdPost);
   }
 
-  // create reactions
+  
   for (let i = 0; i < 100; i += 1) {
-    const reactionBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+    const commentBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { username } = createdUsers.ops[randomUserIndex];
@@ -64,7 +64,7 @@ db.once('open', async () => {
 
     await Post.updateOne(
       { _id: postId },
-      { $push: { reactions: { reactionBody, username } } },
+      { $push: { comments: { commentBody, username } } },
       { runValidators: true }
     );
   }

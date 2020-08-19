@@ -7,8 +7,8 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_POST } from '../utils/queries';
 
-import ReactionList from '../components/ReactionList';
-import ReactionForm from '../components/ReactionForm';
+import CommentList from '../components/CommentList';
+import CommentForm from '../components/CommentForm';
 
 const SinglePost = props => {
 
@@ -38,8 +38,8 @@ const SinglePost = props => {
         </div>
       </div>
 
-      {post.reactionCount > 0 && <ReactionList reactions={post.reactions} />}
-      {Auth.loggedIn() && <ReactionForm postId={post._id} />}
+      {post.commentCount > 0 && <CommentList comments={post.comments} />}
+      {Auth.loggedIn() && <CommentForm postId={post._id} />}
     </div>
   );
 };

@@ -45,22 +45,22 @@ export const ADD_POST = gql`
       postText
       createdAt
       username
-      reactionCount
-      reactions {
+      commentCount
+      comments {
         _id
       }
     }
   }
 `;
 
-export const ADD_REACTION = gql`
-  mutation addReaction($postId: ID!, $reactionBody: String!) {
-    addReaction(postId: $postId, reactionBody: $reactionBody) {
+export const ADD_COMMENT = gql`
+  mutation addComment($postId: ID!, $commentBody: String!) {
+    addComment(postId: $postId, commentBody: $commentBody) {
       _id
-      reactionCount
-      reactions {
+      commentCount
+      comments {
         _id
-        reactionBody
+        commentBody
         createdAt
         username
       }
