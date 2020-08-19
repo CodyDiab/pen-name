@@ -3,14 +3,14 @@ import { useParams } from 'react-router-dom'; //Redirect,
 import PostList from '../components/PostList';
 import { useQuery, useMutation} from '@apollo/react-hooks';
 import { QUERY_USER,QUERY_ME} from '../utils/queries';
-import { ADD_FRIEND} from '../utils/mutations';
-import FriendList from '../components/FriendList';
+import { ADD_FOLLOWER} from '../utils/mutations';
+import FollowerList from '../components/FollowerList';
 import PostForm from '../components/PostForm';
 // import Auth from '../utils/auth';
 
 const Profile = () => {
   
-  const [addFriend] = useMutation(ADD_FRIEND);
+  const [addFollower] = useMutation(ADD_FOLLOWER);
   const {username: userParam} = useParams();
   const { loading, data} = useQuery( userParam ? QUERY_USER : QUERY_ME, {
     variables: {username: userParam}
@@ -36,7 +36,7 @@ const Profile = () => {
 
   const handleClick = async () => {
     try{
-      await addFriend({
+      await addFollower({
         variables: {id:user._id}
       });
     } catch (e) {
@@ -52,7 +52,7 @@ const Profile = () => {
         </h2>
         {userParam && (
         <button className="btn ml-auto" onClick={handleClick}>
-          Add Friend
+          Add Follower
        </button>
        )}
       </div>
@@ -63,10 +63,10 @@ const Profile = () => {
         </div>
 
         <div className="col-12 col-lg-3 mb-3">
-          <FriendList
+          <FollowerList
             username={user.username}
-            friendCount={user.friendCount}
-            friends={user.friends}
+            followerCount={user.followerCount}
+            followers={user.followers}
           />
           
           </div>

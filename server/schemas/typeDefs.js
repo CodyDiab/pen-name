@@ -24,9 +24,9 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    friendCount: Int
+    followerCount: Int
     posts: [Post]
-    friends: [User]
+    followers: [User]
   }
 
   type Query {
@@ -42,7 +42,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     addPost(postText: String!): Post
     addReaction(postId: ID!, reactionBody: String!): Post
-    addFriend(friendId: ID!): User
+    addFollower(followerId: ID!): User
   }
 
   type Auth {

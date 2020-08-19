@@ -24,13 +24,13 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_FRIEND = gql`
-  mutation addFriend($id: ID!) {
-    addFriend(friendId: $id) {
+export const ADD_FOLLOWER = gql`
+  mutation addFollower($id: ID!) {
+    addFollower(followerId: $id) {
       _id
       username
-      friendCount
-      friends {
+      followerCount
+      followers {
         _id
         username
       }

@@ -20,19 +20,19 @@ db.once('open', async () => {
 
   const createdUsers = await User.collection.insert(userData);
 
-  // create friends
+  // create followers
   for (let i = 0; i < 100; i += 1) {
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { _id: userId } = createdUsers.ops[randomUserIndex];
 
-    let friendId = userId;
+    let followerId = userId;
 
-    while (friendId === userId) {
+    while (followerId === userId) {
       const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-      friendId = createdUsers.ops[randomUserIndex];
+      followerId = createdUsers.ops[randomUserIndex];
     }
 
-    await User.updateOne({ _id: userId }, { $addToSet: { friends: friendId } });
+    await User.updateOne({ _id: userId }, { $addToSet: { followers: followerId } });
   }
 
   let createdPost = [];
