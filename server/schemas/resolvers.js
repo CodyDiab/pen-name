@@ -8,6 +8,8 @@ const resolvers = {
             if (context.user) {
                 const userData = await User.findOne({ _id: context.user._id })
                     .select('-__v -password')
+                    .populate('about')
+                    .populate('linkToPortfolio')
                     .populate('posts')
                     .populate('following');
             
@@ -21,13 +23,15 @@ const resolvers = {
             return Post.find(params).sort({ createdAt: -1 });
         },
 
-        postt: async (parent, { _id }) => {
+        post: async (parent, { _id }) => {
             return Post.findOne({ _id });
         },
                 // get all users
         users: async () => {
             return User.find()
             .select('-__v -password')
+            .populate('about')
+            .populate('linkToPortfolio')
             .populate('following')
             .populate('posts');
         },
@@ -35,6 +39,8 @@ const resolvers = {
         user: async (parent, { username }) => {
             return User.findOne({ username })
             .select('-__v -password')
+            .populate('about')
+            .populate('linkToPortfolio')
             .populate('following')
             .populate('posts');
         }    
