@@ -3,8 +3,10 @@ import 'semantic-ui-less/semantic.less';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from "./components/Header";
 import Login from './pages/Login';
 import Sigmup from './pages/Signup';
+import MainFeed from './pages/MainFeed';
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -21,8 +23,11 @@ const client = new ApolloClient({
 function App() {
   return (
  <ApolloProvider client={client}>
+  
    <Router>
+     <Header/>
      <Switch>
+       <Route exact path="/" component={MainFeed}/>
        <Route exact path="/login" component={Login}/>
        <Route exact path="/signup" component={Sigmup}/>
      </Switch>
