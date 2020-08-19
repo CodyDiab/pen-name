@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/react-hooks';
-import { ADD_THOUGHT } from '../../utils/mutations';
+import { ADD_POST } from '../../utils/mutations';
 
-import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
+import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
 
-const ThoughtForm = () => {
-  const [thoughtText, setText] = useState('');
+const PostForm = () => {
+  const [postText, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
-  const [addThought, { error }] = useMutation(ADD_THOUGHT, {
-    update(cache, { data: { addThought } }) {
+  const [addPost, { error }] = useMutation(ADD_POST, {
+    update(cache, { data: { addPost } }) {
       try {
         // could potentially not exist yet, so wrap in a try...catch
-        const { thoughts } = cache.readQuery({ query: QUERY_THOUGHTS });
+        const { posts } = cache.readQuery({ query: QUERY_POSTS });
         cache.writeQuery({
-          query: QUERY_THOUGHTS,
-          data: { thoughts: [addThought, ...thoughts] }
+          query: QUERY_POSTS,
+          data: { posts: [addPost, ...posts] }
         });
       } catch (e) {
         console.error(e);
       }
-  
-      // update me object's cache, appending new thought to the end of the array
+
       const { me } = cache.readQuery({ query: QUERY_ME });
       cache.writeQuery({
         query: QUERY_ME,
-        data: { me: { ...me, thoughts: [...me.thoughts, addThought] } }
+        data: { me: { ...me, posts: [...me.posts, addPost] } }
       });
     }
   });
@@ -41,9 +40,8 @@ const ThoughtForm = () => {
     event.preventDefault();
   
     try {
-      // add thought to database
-      await addThought({
-        variables: { thoughtText }
+      await addPost({
+        variables: { postText }
       });
   
       // clear form value
@@ -65,8 +63,8 @@ const ThoughtForm = () => {
         onSubmit={handleFormSubmit}
       >
         <textarea
-          placeholder="Here's a new thought..."
-          value={thoughtText}
+          placeholder="Here's a new post..."
+          value={postText}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>
@@ -78,4 +76,4 @@ const ThoughtForm = () => {
   );
 };
 
-export default ThoughtForm;
+export default PostForm;

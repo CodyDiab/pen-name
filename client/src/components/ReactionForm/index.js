@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/react-hooks';
 
 
 
-const ReactionForm = ({ thoughtId }) => {
+const ReactionForm = ({ postId }) => {
 
     const [reactionBody, setBody] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
@@ -22,9 +22,8 @@ const ReactionForm = ({ thoughtId }) => {
             event.preventDefault();
           
             try {
-              // add thought to database
               await addReaction({
-                variables: { reactionBody, thoughtId }
+                variables: { reactionBody, postId }
               });
           
               // clear form value
@@ -46,7 +45,7 @@ const ReactionForm = ({ thoughtId }) => {
         onSubmit={handleFormSubmit}
       >
         <textarea
-          placeholder="Leave a reaction to this thought..."
+          placeholder="Leave a reaction to this post..."
           value={reactionBody}
           className="form-input col-12 col-md-9"
           onChange={handleChange}

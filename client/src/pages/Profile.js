@@ -1,11 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom'; //Redirect,
-import ThoughtList from '../components/ThoughtList';
+import PostList from '../components/PostList';
 import { useQuery, useMutation} from '@apollo/react-hooks';
 import { QUERY_USER,QUERY_ME} from '../utils/queries';
 import { ADD_FRIEND} from '../utils/mutations';
 import FriendList from '../components/FriendList';
-import ThoughtForm from '../components/ThoughtForm';
+import PostForm from '../components/PostForm';
 // import Auth from '../utils/auth';
 
 const Profile = () => {
@@ -59,7 +59,7 @@ const Profile = () => {
 
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">
-          <ThoughtList thoughts={user.thoughts} title={`${user.username}'s thoughts...`}/>
+          <PostList posts={user.posts} title={`${user.username}'s posts...`}/>
         </div>
 
         <div className="col-12 col-lg-3 mb-3">
@@ -71,7 +71,7 @@ const Profile = () => {
           
           </div>
       </div>
-      <div className="mb-3"> {!userParam && <ThoughtForm/>}</div>
+      <div className="mb-3"> {!userParam && <PostForm/>}</div>
     </div>
   );
 };
