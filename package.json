@@ -22,8 +22,12 @@
   },
   "homepage": "https://github.com/CodyDiab/pen-name#readme",
   "dependencies": {
+    "apollo-boost": "^0.4.9",
     "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.11.0",
     "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^2.2.0",
     "mongoose": "^5.10.0"
   }
 }
