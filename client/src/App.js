@@ -13,7 +13,7 @@ import NoMatch from './pages/NoMatch';
 import SinglePost from './pages/SinglePost';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
-
+import {StoreProvider} from './utils/GlobalState';
 import Home from './pages/Home';
 
 const client = new ApolloClient({
@@ -33,6 +33,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <StoreProvider>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
@@ -48,6 +49,7 @@ function App() {
           </div>
           <Footer />
         </div>
+        </StoreProvider>
       </Router>
     </ApolloProvider>
   );

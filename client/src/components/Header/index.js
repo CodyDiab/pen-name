@@ -1,46 +1,81 @@
-import React from 'react';
-
+import React,{useEffect} from 'react';
+import {TOGGLE_NAV} from '../../utils/actions';
 import Auth from '../../utils/auth';
+import { useStoreContext } from '../../utils/GlobalState';
 
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+
+  const [state, dispatch] = useStoreContext();
 
   const logout = event => {
     event.preventDefault();
     Auth.logout();
   };
 
-  return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
+  
+  function toggleNav() {
+    dispatch({type: TOGGLE_NAV});
+}
+ 
+      
+  
+  if (!state.navActive){
+    return(
+      <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
           <h1>Pen Name</h1>
         </Link>
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        
+        <a role="button" onClick={toggleNav} class="navbar-burger" aria-label="menu" aria-expanded="false" >
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
      </div>
-    <div class="navbar-menu"> 
-  {Auth.loggedIn() ? (
-    <>
-      <Link to="/profile">Me</Link>
-      <a href="/" onClick={logout}>
-        Logout
-      </a>
-    </>
-  ) : (
-    <>
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Signup</Link>
-    </>
-  )}
-  </div>
-</nav>
+    </nav>
+    )
+  } else {
     
-  );
+  return (
+    <nav className="navbar" role="navigation" aria-label="main navigation">
+    <div className="navbar-brand">
+      <Link to="/" className="navbar-item">
+        <h1>Pen Name</h1>
+      </Link>
+      
+      <a role="button" onClick={toggleNav} class="navbar-burger is-active" aria-label="menu" aria-expanded="false" >
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+   </div>
+  
+
+     <div class="navbar-menu is-active "> 
+      <div className="navbar-start">
+        {Auth.loggedIn() ? (
+          <>
+          <Link className="navbar-item" to="/profile">Profile</Link>
+          <Link className="navbar-item">Write</Link>
+          <Link to="/" onClick={logout}>
+           Logout
+          </Link>
+          </>
+        ):(  <>
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Signup</Link>
+        </>)}
+      </div>
+      </div>
+      </nav>
+     ) 
+      
+      
+  
+ }
 };
 
 export default Header;
