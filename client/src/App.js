@@ -34,7 +34,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <StoreProvider>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="main">
           <Header />
           <div className="container">
             <Switch>

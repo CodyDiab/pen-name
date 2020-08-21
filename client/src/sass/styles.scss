@@ -9,6 +9,14 @@ $pink: #FA7C91;
 $brown: #757763;
 $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
+$charcoal-blue: #22223B;
+//our colours
+$raisin-black:#191B24;
+$spacecadet:#22223B;
+$mountbatenpink:#8C7D8A;
+$silverpink:#D0B8B3;
+$isabelline:#F2E9E4;
+
 
 // Update Bulma's global variables
 $family-sans-serif: "Poppins", sans-serif;
@@ -26,6 +34,16 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
+.main{
+    font-family: $family-sans-serif;
+}
+.main-title{
+    font-family: "Pacifico", cursive;
+}
+
+#stick{
+    display: revert;
+}
 // Import only what you need from Bulma
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../node_modules/bulma/sass/base/_all.sass";

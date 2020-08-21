@@ -26,10 +26,11 @@ const Header = () => {
       <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
-          <h1>Pen Name</h1>
+        <img src={require("../../resources/typewriter.png")}></img>
+          <h1 className="main-title">Pen Name</h1>
         </Link>
         
-        <a role="button" onClick={toggleNav} class="navbar-burger" aria-label="menu" aria-expanded="false" >
+        <a role="button" onClick={toggleNav} class="navbar-burger" id="stick" aria-label="menu" aria-expanded="false" >
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -43,10 +44,11 @@ const Header = () => {
     <nav className="navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
       <Link to="/" className="navbar-item">
-        <h1>Pen Name</h1>
+        <img src={require("../../resources/typewriter.png")}></img>
+        <h1 className="main-title">Pen Name</h1>
       </Link>
       
-      <a role="button" onClick={toggleNav} class="navbar-burger is-active" aria-label="menu" aria-expanded="false" >
+      <a role="button" onClick={toggleNav} class="navbar-burger is-active" id="stick" aria-label="menu" aria-expanded="false" >
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
@@ -69,6 +71,7 @@ const Header = () => {
           <Link to="/signup">Signup</Link>
         </>)}
       </div>
+      <div className="navbar-end"></div>
       </div>
       </nav>
      ) 

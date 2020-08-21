@@ -7481,6 +7481,15 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+.main {
+  font-family: "Poppins", sans-serif; }
+
+.main-title {
+  font-family: "Pacifico", cursive; }
+
+#stick {
+  display: revert; }
+
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
