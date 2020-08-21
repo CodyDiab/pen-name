@@ -62,13 +62,13 @@ const Header = () => {
           <>
           <Link className="navbar-item" to="/profile">Profile</Link>
           <Link className="navbar-item">Write</Link>
-          <Link to="/" onClick={logout}>
+          <Link className="navbar-item" to="/" onClick={logout}>
            Logout
           </Link>
           </>
         ):(  <>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Signup</Link>
+          <Link  className="navbar-item" to="/login">Login</Link>
+          <Link  className="navbar-item" to="/signup">Signup</Link>
         </>)}
       </div>
       <div className="navbar-end"></div>
