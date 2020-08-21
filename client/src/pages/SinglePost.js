@@ -25,22 +25,28 @@ const SinglePost = props => {
   }
 
   return (
+
     <div>
-      <div className="card mb-3">
-        <p className="card-header">
-          <span style={{ fontWeight: 700 }} className="text-light">
+      <div style={{ marginTop:'10px', border: '1px solid #F2E9E4'}}>
+        <div className='card' style={{ backgroundColor:'#8C7D8A'}}>
+          <p className='title has-text-centered'>
             {post.username}
-          </span>{' '}
-          post on {post.createdAt}
-        </p>
-        <div className="card-body">
+          </p>
+          <p className='subtitle has-text-centered'>
+            post on {post.createdAt}
+          </p>
+        <div className='card-content'>
           <p>{post.postText}</p>
         </div>
+        </div>
       </div>
-
-      {post.commentCount > 0 && <CommentList comments={post.comments} />}
-      {Auth.loggedIn() && <CommentForm postId={post._id} />}
+      <div style={{ marginTop: '10px' }}>
+        {post.commentCount > 0 && <CommentList comments={post.comments} />}
+        {Auth.loggedIn() && <CommentForm postId={post._id} />}
+      </div>
     </div>
+
+    
   );
 };
 
