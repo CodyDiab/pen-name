@@ -8,22 +8,18 @@ const Feed = ({ posts, title }) => {
   }
 
   return (
-    <div>
+    <div className="container">
+
       <h3>{title}</h3>
       {posts &&
         posts.map(post => (
-          <div key={post._id} className="card mb-3">
+          <div key={post._id} className="card">
             <p className="card-header">
-              <Link
-                to={`/profile/${post.username}`}
-                style={{ fontWeight: 700 }}
-                className="text-light"
-              >
-                {post.username}
-              </Link>{' '}
-              post on {post.createdAt}
+            <Link className="title" to={`/post/${post._id}`}>Title</Link>
+              
             </p>
-            <div className="card-body">
+            <div className="card-content">
+
               <Link to={`/post/${post._id}`}>
                 <p>{post.postText}</p>
                 <p className="mb-0">
@@ -32,6 +28,21 @@ const Feed = ({ posts, title }) => {
                 </p>
               </Link>
             </div>
+            <footer className="card-footer">
+              <p className="card-footer-item">
+                Author:
+              <Link
+                to={`/profile/${post.username}`}
+                style={{ fontWeight: 700 }}
+                className="text-light"
+              >
+                
+                {post.username}
+              </Link>{' '}
+              post on {post.createdAt}
+              </p>
+
+            </footer>
           </div>
         ))}
     </div>

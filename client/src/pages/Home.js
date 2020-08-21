@@ -23,16 +23,16 @@ const Home = () => {
     <main>
       <SubNav/>
       <div className="flex-row justify-space-between">
-        {loggedIn && (
+      {/* {loggedIn && (
           <div className="col-12 mb-3">
             <PostForm />
           </div>
-        )}
+        )} */}
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
   {loading ? (
-    <div>Loading...</div>
+    <progress className="progress is-medium is-dark" max="100">Loading</progress>
   ) : (
-    <Feed posts={posts} title="Some Feed for Post(s)..." />
+    <Feed posts={posts}  />
   )}
 </div>
 {loggedIn && userData ? (

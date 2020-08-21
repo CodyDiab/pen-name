@@ -72,9 +72,11 @@ const Login = (props) => {
   </span>
 </p>
 </div>
+
 <button className='is-centered' type='submit'>
             Submit
-   </button>
+</button>
+
  </form>
 </div>
 </section>

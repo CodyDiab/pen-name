@@ -30,7 +30,7 @@ const Header = () => {
           <h1 className="main-title">Pen Name</h1>
         </Link>
         
-        <a role="button" onClick={toggleNav} class="navbar-burger" id="stick" aria-label="menu" aria-expanded="false" >
+        <a role="button" onClick={toggleNav} className="navbar-burger" id="stick" aria-label="menu" aria-expanded="false" >
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -48,7 +48,7 @@ const Header = () => {
         <h1 className="main-title">Pen Name</h1>
       </Link>
       
-      <a role="button" onClick={toggleNav} class="navbar-burger is-active" id="stick" aria-label="menu" aria-expanded="false" >
+      <a role="button" onClick={toggleNav} className="navbar-burger is-active" id="stick" aria-label="menu" aria-expanded="false" >
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
@@ -56,12 +56,12 @@ const Header = () => {
    </div>
   
 
-     <div class="navbar-menu is-active "> 
+     <div className="navbar-menu is-active "> 
       <div className="navbar-start">
         {Auth.loggedIn() ? (
           <>
           <Link className="navbar-item" to="/profile" onClick={toggleNav}>Profile</Link>
-          <Link className="navbar-item" onClick={toggleNav}>Write</Link>
+          <Link className="navbar-item" to="/write" onClick={toggleNav}>Write</Link>
           <Link className="navbar-item" to="/" onClick={logout}>
            Logout
           </Link>

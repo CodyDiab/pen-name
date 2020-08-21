@@ -7752,7 +7752,7 @@ th {
     text-align: inherit; }
 
 html {
-  background-color: #191b248f;
+  background-color: #191b24;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -7791,7 +7791,7 @@ body {
   line-height: 1.5; }
 
 a {
-  color: #FA7C91;
+  color: #22223B;
   cursor: pointer;
   text-decoration: none; }
   a strong {
@@ -9634,7 +9634,7 @@ table th {
     font-size: 1.5rem; }
 
 .navbar {
-  background-color: #191b248f;
+  background-color: #191b24;
   min-height: 3.25rem;
   position: relative;
   z-index: 30; }
@@ -10189,7 +10189,7 @@ a.navbar-item,
   .navbar-link:hover,
   .navbar-link.is-active {
     background-color: #fafafa;
-    color: #3273dc; }
+    color: #8C7D8A; }
 
 .navbar-item {
   flex-grow: 0;
@@ -10252,7 +10252,7 @@ a.navbar-item,
   .navbar-link::after {
     display: none; }
   .navbar-menu {
-    background-color: #191b248f;
+    background-color: #191b24;
     box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
     padding: 0.5rem 0; }
     .navbar-menu.is-active {

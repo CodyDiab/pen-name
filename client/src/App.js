@@ -15,6 +15,7 @@ import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import {StoreProvider} from './utils/GlobalState';
 import Home from './pages/Home';
+import WritePost from './pages/WritePost'
 
 const client = new ApolloClient({
   request: operation => {
@@ -43,6 +44,7 @@ function App() {
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/profile/:username?" component={Profile} />
               <Route exact path="/post/:id" component={SinglePost} />
+              <Route exact path="/write" component={WritePost}/>
 
               <Route component={NoMatch} />
             </Switch>
