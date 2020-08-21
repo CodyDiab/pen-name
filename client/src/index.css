@@ -7487,6 +7487,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .main-title {
   font-family: "Pacifico", cursive; }
 
+.navbar {
+  background-color: #8c7d8a9f; }
+
 #stick {
   display: revert; }
 
@@ -7752,7 +7755,7 @@ th {
     text-align: inherit; }
 
 html {
-  background-color: #EFF0EB;
+  background-color: #191b248f;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
