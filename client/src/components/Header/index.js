@@ -23,7 +23,7 @@ const Header = () => {
   
   if (!state.navActive){
     return(
-      <nav className="navbar" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
         <img src={require("../../resources/typewriter.png")}></img>
@@ -41,7 +41,7 @@ const Header = () => {
   } else {
     
   return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
       <Link to="/" className="navbar-item">
         <img src={require("../../resources/typewriter.png")}></img>
@@ -60,15 +60,15 @@ const Header = () => {
       <div className="navbar-start">
         {Auth.loggedIn() ? (
           <>
-          <Link className="navbar-item" to="/profile">Profile</Link>
-          <Link className="navbar-item">Write</Link>
+          <Link className="navbar-item" to="/profile" onClick={toggleNav}>Profile</Link>
+          <Link className="navbar-item" onClick={toggleNav}>Write</Link>
           <Link className="navbar-item" to="/" onClick={logout}>
            Logout
           </Link>
           </>
         ):(  <>
-          <Link  className="navbar-item" to="/login">Login</Link>
-          <Link  className="navbar-item" to="/signup">Signup</Link>
+          <Link  className="navbar-item" to="/login" onClick={toggleNav}>Login</Link>
+          <Link  className="navbar-item" to="/signup" onClick={toggleNav}>Signup</Link>
         </>)}
       </div>
       <div className="navbar-end"></div>

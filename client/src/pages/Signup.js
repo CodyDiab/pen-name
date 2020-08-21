@@ -36,15 +36,16 @@ const Signup = () => {
     }
   };
 
-  return (
-    <main className='flex-row justify-center mb-4'>
-      <div className='col-12 col-md-6'>
-        <div className='card'>
-          <h4 className='card-header'>Sign Up</h4>
-          <div className='card-body'>
-            <form onSubmit={handleFormSubmit}>
-              <input
-                className='form-input'
+  return( 
+    
+
+<section className="section">
+<div className="container">
+  
+<form onSubmit={handleFormSubmit}>
+<div className="field">  
+  <p className="control has-icons-left has-icons-right">
+  <input        className='input'
                 placeholder='Your username'
                 name='username'
                 type='username'
@@ -52,33 +53,52 @@ const Signup = () => {
                 value={formState.username}
                 onChange={handleChange}
               />
-              <input
-                className='form-input'
+        <span className="icon is-small is-left">
+             <i className="fas fa-envelope"></i>
+         </span>
+           <span className="icon is-small is-right">
+            <i className="fas fa-check"></i>
+          </span>
+      </p>
+</div>
+<div className="field">  
+  <p className="control has-icons-left has-icons-right">
+    <input      className="input"
                 placeholder='Your email'
                 name='email'
                 type='email'
                 id='email'
                 value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className='form-input'
-                placeholder='******'
-                name='password'
-                type='password'
-                id='password'
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button className='btn d-block w-100' type='submit'>
-                Submit
-              </button>
-            </form>
-            {error && <div>Sign up failed</div>}
-          </div>
-        </div>
-      </div>
-    </main>
+                onChange={handleChange} />
+        <span className="icon is-small is-left">
+             <i className="fas fa-envelope"></i>
+         </span>
+           <span className="icon is-small is-right">
+            <i className="fas fa-check"></i>
+          </span>
+      </p>
+</div>
+<div className="field">
+<p className="control has-icons-left">
+  <input      className="input"
+              placeholder='******'
+              name='password'
+              type='password'
+              id='password'
+              value={formState.password}
+              onChange={handleChange} />
+                    <span className="icon is-small is-left">
+                   <i className="fas fa-lock"></i>
+               </span>
+            </p>
+   </div>
+          <button className='is-centered' type='submit'>
+            Submit
+   </button>
+ </form>
+</div>
+</section>
+
   );
 };
 

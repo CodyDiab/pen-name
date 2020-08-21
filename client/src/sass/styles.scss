@@ -28,9 +28,16 @@ $primary: $purple;
 $link: $pink;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
-$background:$mountbatenpinktransparent;
+
+// navbar styles
+$navbar-background-color:$raisin-black;
+$navbar-item-color:$isabelline;
+$navbar-dropdown-item-hover-color:$silverpink;
+$navbar-dropdown-item-hover-background-color:$mountbatenpinktransparent;
+$navbar-burger-color:$isabelline;
+
 // Update some of Bulma's component variables
-$body-background-color: $raisin-black;
+$body-background-color:$raisin-black;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
@@ -41,9 +48,8 @@ $input-shadow: none;
 .main-title{
     font-family: "Pacifico", cursive;
 }
-.navbar{
-    background-color: $mountbatenpinktransparent;
-}
+
+   
 
 #stick{
     display: revert;

@@ -2,9 +2,10 @@ import React from 'react';
 import { QUERY_POSTS, QUERY_ME_BASIC } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
 import Auth from '../utils/auth';
-import PostList from '../components/PostList';
+import Feed from '../components/MainFeed';
 import PostForm from '../components/PostForm';
 import FollowerList from '../components/FollowerList';
+import SubNav from "../components/SubNav";
 
 const Home = () => {
   // use useQuery hook to make query request
@@ -20,6 +21,7 @@ const Home = () => {
 
   return (
     <main>
+      <SubNav/>
       <div className="flex-row justify-space-between">
         {loggedIn && (
           <div className="col-12 mb-3">
@@ -30,7 +32,7 @@ const Home = () => {
   {loading ? (
     <div>Loading...</div>
   ) : (
-    <PostList posts={posts} title="Some Feed for Post(s)..." />
+    <Feed posts={posts} title="Some Feed for Post(s)..." />
   )}
 </div>
 {loggedIn && userData ? (

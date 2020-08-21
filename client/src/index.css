@@ -7487,9 +7487,6 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .main-title {
   font-family: "Pacifico", cursive; }
 
-.navbar {
-  background-color: #8c7d8a9f; }
-
 #stick {
   display: revert; }
 
@@ -9637,7 +9634,7 @@ table th {
     font-size: 1.5rem; }
 
 .navbar {
-  background-color: white;
+  background-color: #191b248f;
   min-height: 3.25rem;
   position: relative;
   z-index: 30; }
@@ -10135,7 +10132,7 @@ body.has-navbar-fixed-bottom {
   overflow-y: hidden; }
 
 .navbar-burger {
-  color: #4a4a4a;
+  color: #F2E9E4;
   cursor: pointer;
   display: block;
   height: 3.25rem;
@@ -10173,7 +10170,7 @@ body.has-navbar-fixed-bottom {
 
 .navbar-item,
 .navbar-link {
-  color: #4a4a4a;
+  color: #F2E9E4;
   display: block;
   line-height: 1.5;
   padding: 0.5rem 0.75rem;
@@ -10255,7 +10252,7 @@ a.navbar-item,
   .navbar-link::after {
     display: none; }
   .navbar-menu {
-    background-color: white;
+    background-color: #191b248f;
     box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
     padding: 0.5rem 0; }
     .navbar-menu.is-active {
@@ -10307,8 +10304,8 @@ a.navbar-item,
     .navbar.is-transparent .navbar-item.has-dropdown.is-active .navbar-link, .navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:focus .navbar-link, .navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:focus-within .navbar-link, .navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:hover .navbar-link {
       background-color: transparent !important; }
     .navbar.is-transparent .navbar-dropdown a.navbar-item:focus, .navbar.is-transparent .navbar-dropdown a.navbar-item:hover {
-      background-color: whitesmoke;
-      color: #0a0a0a; }
+      background-color: #8c7d8a9f;
+      color: #D0B8B3; }
     .navbar.is-transparent .navbar-dropdown a.navbar-item.is-active {
       background-color: whitesmoke;
       color: #3273dc; }
@@ -10363,8 +10360,8 @@ a.navbar-item,
     .navbar-dropdown a.navbar-item {
       padding-right: 3rem; }
       .navbar-dropdown a.navbar-item:focus, .navbar-dropdown a.navbar-item:hover {
-        background-color: whitesmoke;
-        color: #0a0a0a; }
+        background-color: #8c7d8a9f;
+        color: #D0B8B3; }
       .navbar-dropdown a.navbar-item.is-active {
         background-color: whitesmoke;
         color: #3273dc; }

@@ -1,6 +1,6 @@
 import { useReducer} from 'react';
 
-import {TOGGLE_NAV, CURRENT_USER} from "./actions";
+import {TOGGLE_NAV, CURRENT_USER, FEED_TOGGLE} from "./actions";
 
 export const reducer = (state, action ) => {
     switch(action.type) {
@@ -13,6 +13,11 @@ export const reducer = (state, action ) => {
             return{
                 ...state,
                 loggedinUser: action.loggedinUser
+            };
+        case FEED_TOGGLE:
+            return{
+              ...state,
+              feedToggle: action.feedToggle
             }
             default:
                 return state;
