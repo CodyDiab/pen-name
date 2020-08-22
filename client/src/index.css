@@ -10939,3 +10939,9 @@ a.navbar-item,
       padding: 9rem 1.5rem; }
     .section.is-large {
       padding: 18rem 1.5rem; } }
+
+
+.cardwork {
+  background-image: linear-gradient(-90deg, #22223bbb, #8c7d8ab4), url(./assets/1.jpg);
+  background-size: cover;
+}
