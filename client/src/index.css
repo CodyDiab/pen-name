@@ -7481,6 +7481,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+.is-active {
+  color: #8C7D8A; }
+
 .main {
   font-family: "Poppins", sans-serif; }
 
@@ -7861,7 +7864,7 @@ table th {
   color: #363636; }
 
 .button {
-  background-color: white;
+  background-color: #8C7D8A;
   border-color: #dbdbdb;
   border-width: 1px;
   color: #363636;
@@ -8832,7 +8835,7 @@ table th {
 
 .input, .textarea, .select select {
   background-color: white;
-  border-color: transparent;
+  border-color: #D0B8B3, transparent;
   border-radius: 4px;
   color: #363636; }
   .input::-moz-placeholder, .textarea::-moz-placeholder, .select select::-moz-placeholder {

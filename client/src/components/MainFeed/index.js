@@ -5,18 +5,32 @@ import { useQuery} from '@apollo/react-hooks';
 import {QUERY_ME_BASIC} from '../../utils/queries';
 import Auth from '../../utils/auth'
 
-const Feed = ({ posts, followers}) => {
+const Feed = ({ posts,userData}) => {
   // const {username: userParam} = useParams();
-  // const { data} = useQuery( QUERY_ME_BASIC);
+  // const {data:userData} = useQuery( QUERY_ME_BASIC);
   // const user = data?.me;
   // const following = user.followers
- console.log(followers)
+//  console.log(userData)
   const [viewFollowing, setViewFollowing] = useState(false);
 
   // function byFollowing(posts) {
   //   return posts.username == user.followers.username 
   // }
-  const followPosts = posts.filter((posts) => posts.username === followers.username);
+  
+  if(userData){
+  var followingUsers =[]
+
+  userData.me.followers.map( follower => followingUsers.push(follower.username))
+  console.log(followingUsers)
+
+  var followPosts = posts.filter(
+    function(e) {
+      return this.indexOf(e) < 0;
+    },
+    followingUsers
+  );
+  }
+  // const followPosts = posts.filter((posts) => posts.username === followers);
 
  
   if (!posts.length) {
@@ -48,28 +62,29 @@ if(!viewFollowing) {
 
               <Link to={`/post/${post._id}`}>
                 <p>{post.postText}</p>
-                <p className="mb-0">
+                <span className="tag is-rounded">
                 Comments: {post.commentCount} || Click to{' '}
                   {post.commentCount ? 'see' : 'start'} the discussion!
-                </p>
+                </span>
               </Link>
             </div>
            
             <footer className="card-footer">
-              <p className="card-footer-item">
+              <div className="tags has-addons">
+              <span className="tag ">
                 Author:
               <Link
                 to={`/profile/${post.username}`}
                 style={{ fontWeight: 700 }}
-                className="text-light"
+                
               >  {post.username}
-               </Link>
-               <br></br>
-               <time>
+               </Link><br/>
+               </span>
+               <span className="tag is-light">
              {' '}
              {post.createdAt}
-              </time>
-              </p>
+              </span>
+              </div>
              
 
             </footer>
@@ -89,7 +104,7 @@ if(!viewFollowing) {
             
             </div>
               {posts &
-                followPosts.map(post => (
+               followPosts.map(post => (
                   <section className="section">
                   <div key={post._id} className="card">
                     <p className="card-header">

@@ -48,11 +48,14 @@ $tabs-border-bottom-color:$isabelline;
 $tabs-toggle-link-active-background-color:$mountbatenpink;
 $tabs-toggle-link-active-border-color:$mountbatenpink;
 $tabs-toggle-link-active-color:$mountbatenpink;
+
 // Update some of Bulma's component variables
 $body-background-color:$raisin-black;
 $control-border-width: 2px;
-$input-border-color: transparent;
+$input-border-color:$silverpink, transparent;
 $input-shadow: none;
+$button-background-color:$mountbatenpink;
+$tag-background-color:$mountbatenpink;
 
 .main{
     font-family: $family-sans-serif;
