@@ -1,12 +1,14 @@
-import React,{useEffect} from 'react';
+import React,{useEffect,useQuery} from 'react';
 import {TOGGLE_NAV} from '../../utils/actions';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
+// import {QUERY_ME_BASIC} from '../../utils/queries';
 
 import { Link } from 'react-router-dom';
 
 const Header = () => {
 
+  // const { data: userData } = useQuery(QUERY_ME_BASIC);
   const [state, dispatch] = useStoreContext();
 
   const logout = event => {

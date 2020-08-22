@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_POST } from '../utils/mutations';
-import { Link } from 'react-router-dom';
+
 
 import { QUERY_POSTS, QUERY_ME } from '../utils/queries';
 

@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 
 import Auth from '../utils/auth';
-// import {useStoreContext} from '../../utils/GlobalState';
-// import {LOGGEDIN_USER} from '../utils/actions'
+
 import { useMutation } from '@apollo/react-hooks';
 import { LOGIN_USER } from '../utils/mutations';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  // const [state, dispatch] = useStoreContext()
+  
 
   const [login, { error }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
+      
      
     setFormState({
       ...formState,

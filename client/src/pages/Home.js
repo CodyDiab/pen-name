@@ -15,6 +15,7 @@ const Home = () => {
   const { data: userData } = useQuery(QUERY_ME_BASIC);
 
   const posts = data?.posts || [];
+  
   console.log(posts);
 
   const loggedIn = Auth.loggedIn();
@@ -32,10 +33,10 @@ const Home = () => {
   {loading ? (
     <progress className="progress is-medium is-dark" max="100">Loading</progress>
   ) : (
-    <Feed posts={posts}  />
+    <Feed posts={posts} following={userData.me.followers}/>
   )}
 </div>
-{loggedIn && userData ? (
+{/* {loggedIn && userData ? (
   <div className="col-12 col-lg-3 mb-3">
     <FollowerList
       username={userData.me.username}
@@ -43,7 +44,7 @@ const Home = () => {
       followers={userData.me.followers}
     />
   </div>
-) : null}
+) : null} */}
     </div>
   </main>
   );
