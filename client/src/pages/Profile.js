@@ -1,12 +1,12 @@
 import React from 'react';
-import { useParams } from 'react-router-dom'; //Redirect,
+import { Redirect, useParams } from 'react-router-dom'; //Redirect,
 import PostList from '../components/PostList';
 import { useQuery, useMutation} from '@apollo/react-hooks';
 import { QUERY_USER,QUERY_ME} from '../utils/queries';
 import { ADD_FOLLOWER} from '../utils/mutations';
 import FollowerList from '../components/FollowerList';
 import PostForm from '../components/PostForm';
-// import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 
 const Profile = () => {
   
@@ -19,9 +19,9 @@ const Profile = () => {
   const user = data?.me||data?.user || {};
   
 //   // redirect to personal profile page if username is the logged-in user's
-//   if (Auth.loggedIn() && Auth.getProfile().data.username.toLowerCase() === userParam.toLowerCase()) {
-//   return <Redirect to="/profile" />;
-// }
+if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+  return <Redirect to="/profile" />;
+}
 
   if(loading) {
     return <div>Loading...</div>
@@ -48,11 +48,11 @@ const Profile = () => {
     <div>
       <div className="flex-row mb-3">
          <h2 className="bg-dark text-secondary p-3 display-inline-block">
-         Viewing {userParam ? `${user.username}'s`: 'your'}'s profile.
+         Viewing {userParam ? `${user.username}'s`: 'your'} profile.
         </h2>
         {userParam && (
         <button className="btn ml-auto" onClick={handleClick}>
-          Add Follower
+          Follow
        </button>
        )}
       </div>
