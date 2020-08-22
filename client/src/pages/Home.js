@@ -5,7 +5,7 @@ import Auth from '../utils/auth';
 import Feed from '../components/MainFeed';
 import PostForm from '../components/PostForm';
 import FollowerList from '../components/FollowerList';
-import SubNav from "../components/SubNav";
+
 
 const Home = () => {
   // use useQuery hook to make query request
@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <main>
-      <SubNav/>
+     
       <div className="flex-row justify-space-between">
       {/* {loggedIn && (
           <div className="col-12 mb-3">

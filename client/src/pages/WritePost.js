@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_POST } from '../utils/mutations';
+import { Link } from 'react-router-dom';
 
 import { QUERY_POSTS, QUERY_ME } from '../utils/queries';
 
 const PostForm = () => {
+  
   const [postText, setText] = useState('');
+  const [formState, setFormState] = useState({ title: '', postText: ''});
   const [characterCount, setCharacterCount] = useState(0);
   const [addPost, { error }] = useMutation(ADD_POST, {
     update(cache, { data: { addPost } }) {
@@ -30,23 +33,32 @@ const PostForm = () => {
   });
 
   const handleChange = event => {
-    if (event.target.value.length <= 280) {
-      setText(event.target.value);
-      setCharacterCount(event.target.value.length);
-    }
+    // if (event.target.value.length <= 1000) {
+    
+    //   setText(event.target.value);
+    //   setCharacterCount(event.target.value.length);
+   
+    // }
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
 
   const handleFormSubmit = async event => {
     event.preventDefault();
   
     try {
-      await addPost({
-        variables: { postText }
+        const { data } = await addPost({
+        variables: { ...formState}
       });
-  
+      document.location.replace('/')
       // clear form value
-      setText('');
-      setCharacterCount(0);
+     setFormState('')
+    //   setText('');
+    //   setCharacterCount(0);
     } catch (e) {
       console.error(e);
     }
@@ -62,16 +74,24 @@ const PostForm = () => {
         className="flex-row justify-center justify-space-between-md align-stretch"
         onSubmit={handleFormSubmit}
       >
-          <input class="input" type="text" placeholder="Title"></input>
+          <input className="input" 
+          name="title"
+          type="text"
+          placeholder="Title"
+           value={formState.title}
+           onChange={handleChange}
+          ></input>
         <textarea
           placeholder="Body..."
-          value={postText}
+          value={formState.postText}
+          type="text"
+          name="postText"
           className="textarea"
           rows="17"
           onChange={handleChange}
         ></textarea>
-        <button className="btn col-12 col-md-3" type="submit">
-          Submit
+        <button className="button" type="submit" >
+           Submit
         </button>
       </form>
     </div>
