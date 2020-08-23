@@ -30,7 +30,7 @@ const PostForm = () => {
   });
 
   const handleChange = event => {
-    if (event.target.value.length <= 280) {
+    if (event.target.value.length <= 500) {
       setText(event.target.value);
       setCharacterCount(event.target.value.length);
     }
@@ -53,24 +53,34 @@ const PostForm = () => {
   };
 
   return (
-    <div>
-      <p className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}>
-        Character Count: {characterCount}/280
+    <div >
+      <h4 className="title is-spaced is-4">New Post</h4>
+      <p className={`m-0 ${characterCount === 500 || error ? 'text-error' : ''}`}>
+        Character Count: {characterCount}/500
         {error && <span className="ml-2">Something went wrong...</span>}
       </p>
       <form
-        className="flex-row justify-center justify-space-between-md align-stretch"
+        className=""
         onSubmit={handleFormSubmit}
       >
+        <div class="field">
+            <div class="control">
         <textarea
-          placeholder="Here's a new post..."
+          placeholder="Write something..."
           value={postText}
-          className="form-input col-12 col-md-9"
+          className="textarea"
+          rows="10"
           onChange={handleChange}
         ></textarea>
-        <button className="btn col-12 col-md-3" type="submit">
+        </div>
+        </div>
+        <div class="field">
+            <div class="control">
+        <button className="button is-fullwidth has-text-weight-bold" style={{background:'#8C7D8A', color:'#FFFFFF'}}type="submit">
           Submit
         </button>
+        </div>
+        </div>
       </form>
     </div>
   );

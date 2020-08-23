@@ -7755,7 +7755,7 @@ th {
     text-align: inherit; }
 
 html {
-  background-color: #191B24;
+  background-color: #EFE5DC;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -7765,6 +7765,20 @@ html {
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%; }
 
+p {
+  color: #FA7C91;
+  font-weight: 700;
+}
+a {
+  color: #FA7C91;
+  cursor: pointer;
+  text-decoration: none; 
+  font-weight: 700;
+}
+  a strong {
+    color: currentColor; }
+  a:hover {
+    color: #363636; }
 article,
 aside,
 figure,
