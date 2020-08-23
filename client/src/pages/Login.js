@@ -38,8 +38,8 @@ const Login = (props) => {
   };
 
   return (
-<section className="section">
-<div className="container">
+<section className="section level">
+<div className="container level-item">
   
 <form onSubmit={handleFormSubmit}>
 <div className="field">

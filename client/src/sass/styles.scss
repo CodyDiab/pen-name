@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import "../../node_modules/bulma/bulma.sass";
+
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@1,200&display=swap');
 
 
@@ -42,7 +42,7 @@ $navbar-item-hover-color:$mountbatenpink;
 $tabs-link-hover-color:$mountbatenpinktransparent;
 $tabs-link-hover-border-bottom-color:$mountbatenpinktransparent;
 $tabs-link-active-border-bottom-color:$mountbatenpink;
-$tabs-link-active-color:$mountbatenpink;
+$tabs-link-active-color:$silverpink;
 $tabs-link-color:$isabelline;
 $tabs-border-bottom-color:$isabelline;
 $tabs-toggle-link-active-background-color:$mountbatenpink;
@@ -55,21 +55,11 @@ $control-border-width: 2px;
 $input-border-color:$silverpink, transparent;
 $input-shadow: none;
 $button-background-color:$mountbatenpink;
-$tag-background-color:$mountbatenpink;
+// $tag-background-color:$mountbatenpink;
 
-.main{
-    font-family: $family-sans-serif;
-}
-.main-title{
-    font-family: "Pacifico", cursive;
-}
 
-   
-
-#stick{
-    display: revert;
-}
 // Import only what you need from Bulma
+@import "../../node_modules/bulma/bulma.sass";
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../node_modules/bulma/sass/base/_all.sass";
 @import "../../node_modules/bulma/sass/elements/button.sass";
@@ -79,3 +69,24 @@ $tag-background-color:$mountbatenpink;
 @import "../../node_modules/bulma/sass/components/navbar.sass";
 @import "../../node_modules/bulma/sass/layout/hero.sass";
 @import "../../node_modules/bulma/sass/layout/section.sass";
+
+.main{
+    font-family: $family-sans-serif;
+}
+.main-title{
+    font-family: "Pacifico", cursive;
+}
+
+.card{
+    border-radius: $radius;
+}
+
+#stick{
+    display: revert;
+}
+.graphic{
+    width:200px;
+    height:50px;
+    background:$isabelline;
+    border-radius: $radius;
+}

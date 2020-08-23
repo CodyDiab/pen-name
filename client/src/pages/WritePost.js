@@ -36,7 +36,7 @@ const PostForm = () => {
     // if (event.target.value.length <= 1000) {
     
     //   setText(event.target.value);
-    //   setCharacterCount(event.target.value.length);
+  setCharacterCount(event.target.value.length);
    
     // }
     const { name, value } = event.target;
@@ -91,7 +91,7 @@ const PostForm = () => {
           onChange={handleChange}
         ></textarea>
         <button className="button" type="submit" >
-           Submit
+           Finalize you work
         </button>
       </form>
     </div>

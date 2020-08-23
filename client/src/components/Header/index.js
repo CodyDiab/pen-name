@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
 
-  // const { data: userData } = useQuery(QUERY_ME_BASIC);
+  // const { data } = useQuery(QUERY_ME_BASIC);
   const [state, dispatch] = useStoreContext();
 
   const logout = event => {
@@ -27,9 +27,9 @@ const Header = () => {
     return(
       <nav className="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
-        <img src={require("../../resources/typewriter.png")}></img>
-          <h1 className="main-title">Pen Name</h1>
+        <Link to="/" className="">
+        <img className="graphic"src={require("../../resources/PenNameGraphic.svg")}></img>
+          {/* <h1 className="main-title">Pen Name</h1> */}
         </Link>
         
         <a role="button" onClick={toggleNav} className="navbar-burger" id="stick" aria-label="menu" aria-expanded="false" >
@@ -46,8 +46,7 @@ const Header = () => {
     <nav className="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
       <Link to="/" className="navbar-item">
-        <img src={require("../../resources/typewriter.png")}></img>
-        <h1 className="main-title">Pen Name</h1>
+      <img className="graphic"src={require("../../resources/PenNameGraphic.svg")}></img>
       </Link>
       
       <a role="button" onClick={toggleNav} className="navbar-burger is-active" id="stick" aria-label="menu" aria-expanded="false" >
@@ -62,6 +61,7 @@ const Header = () => {
       <div className="navbar-start">
         {Auth.loggedIn() ? (
           <>
+         
           <Link className="navbar-item" to="/profile" onClick={toggleNav}>Profile</Link>
           <Link className="navbar-item" to="/write" onClick={toggleNav}>Write</Link>
           <Link className="navbar-item" to="/" onClick={logout}>

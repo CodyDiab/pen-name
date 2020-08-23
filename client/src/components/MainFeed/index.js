@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useParams } from 'react-router-dom'; //Redirect,
 import { Link } from 'react-router-dom';
 import { useQuery} from '@apollo/react-hooks';
-import {QUERY_ME_BASIC} from '../../utils/queries';
+import {QUERY_ME_BASIC,QUERY_POSTS} from '../../utils/queries';
 import Auth from '../../utils/auth'
 
 const Feed = ({ posts,userData}) => {
@@ -12,24 +12,50 @@ const Feed = ({ posts,userData}) => {
   // const following = user.followers
 //  console.log(userData)
   const [viewFollowing, setViewFollowing] = useState(false);
+  var followingUsers =[]
 
+ 
+  // const {data:followPosts} = useQuery(  QUERY_POSTS,
+  //   {variables: {username: followingUsers}}
+  // );
   // function byFollowing(posts) {
   //   return posts.username == user.followers.username 
   // }
   
-  if(userData){
-  var followingUsers =[]
+ 
+//   if(userData){
 
-  userData.me.followers.map( follower => followingUsers.push(follower.username))
-  console.log(followingUsers)
 
-  var followPosts = posts.filter(
-    function(e) {
-      return this.indexOf(e) < 0;
-    },
-    followingUsers
-  );
-  }
+//   userData.me.followers.map( follower => followingUsers.push(follower.username))
+//   console.log(followingUsers)
+ 
+//   const sortByFollowing = (array) => {
+    
+//     const sorted = []
+//     array.forEach(e => {
+//       let sort = posts.filter(post => post.username == e)
+//       sorted.push(sort)
+//     });
+
+//      return sorted
+   
+//   }
+//   console.log(sortByFollowing(followingUsers))
+//   const preSort = sortByFollowing(followingUsers)
+
+//   const joinFollowPosts = (array) => {
+//     const outPut = []
+//     array.forEach(e => {
+//       e.forEach(el => {
+//         outPut.push(el)
+//       })
+//     })
+//     return outPut
+//   }
+//    console.log(joinFollowPosts(preSort))
+// // const sortedByFollowing=(joinFollowPosts(preSort))
+//   }
+  
   // const followPosts = posts.filter((posts) => posts.username === followers);
 
  
@@ -55,7 +81,7 @@ if(!viewFollowing) {
           <section className="section">
           <div key={post._id} className="card">
             <p className="card-header">
-        <Link className="title" to={`/post/${post._id}`}>{post.title}</Link>
+        <Link className="" to={`/post/${post._id}`}>{post.title}</Link>
               
             </p>
             <div className="card-content">
@@ -92,7 +118,38 @@ if(!viewFollowing) {
           </section>
         ))}
     </div>);
-        } else {
+        } else  {
+            
+          userData.me.followers.map( follower => followingUsers.push(follower.username))
+  console.log(followingUsers)
+ 
+  const sortByFollowing = (array) => {
+    
+    const sorted = []
+    array.forEach(e => {
+      let sort = posts.filter(post => post.username == e)
+      sorted.push(sort)
+    });
+
+     return sorted
+   
+  }
+  console.log(sortByFollowing(followingUsers))
+  const preSort = sortByFollowing(followingUsers)
+
+  const joinFollowPosts = (array) => {
+    const outPut = []
+    array.forEach(e => {
+      e.forEach(el => {
+        outPut.push(el)
+      })
+    })
+    return outPut
+  }
+   console.log(joinFollowPosts(preSort))
+const sortedByFollowing=(joinFollowPosts(preSort))
+
+
           return (
             <div className="container">
         
@@ -103,12 +160,12 @@ if(!viewFollowing) {
                 </ul>
             
             </div>
-              {posts &
-               followPosts.map(post => (
+              {sortedByFollowing &
+              sortedByFollowing.map(post => (
                   <section className="section">
                   <div key={post._id} className="card">
                     <p className="card-header">
-                <Link className="title" to={`/post/${post._id}`}>{post.title}</Link>
+                <Link className="" to={`/post/${post._id}`}>{post.title}</Link>
                       
                     </p>
                     <div className="card-content">

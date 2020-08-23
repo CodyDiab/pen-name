@@ -16,7 +16,8 @@ const Home = () => {
   // const followers= userData?.me.followers
   const posts = data?.posts || [];
   
-  console.log(posts);
+  console.log(userData)
+  // console.log(posts);
  
 
   const loggedIn = Auth.loggedIn();
