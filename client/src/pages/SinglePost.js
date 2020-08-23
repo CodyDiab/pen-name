@@ -28,16 +28,17 @@ const SinglePost = props => {
 
     <div>
       <div style={{ marginTop:'10px', border: '1px solid #F2E9E4'}}>
-        <div className='card' style={{ backgroundColor:'#8C7D8A'}}>
-          <p className='title has-text-centered'>
+        <div className='card' style={{ backgroundColor:'#8C7D8A' }}>
+          <p className='title has-text-centered' style={{ color:'#D0B8B3' }}>
             {post.username}
           </p>
-          <p className='subtitle has-text-centered'>
+          <p className='subtitle has-text-centered' style={{ color:'#F2E9E4' }}>
             post on {post.createdAt}
           </p>
-        <div className='card-content'>
-          <p>{post.postText}</p>
-        </div>
+          
+          <div className='card-content'>
+            <p style={{ color:'#F2E9E4' }}>{post.postText}</p>
+          </div>
         </div>
       </div>
       <div style={{ marginTop: '10px' }}>

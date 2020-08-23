@@ -39,9 +39,10 @@ export const ADD_FOLLOWER = gql`
 `;
 
 export const ADD_POST = gql`
-  mutation addPost($postText: String!) {
-    addPost(postText: $postText) {
+  mutation addPost($title:String, $postText: String!) {
+    addPost( title: $title, postText: $postText) {
       _id
+      title
       postText
       createdAt
       username
