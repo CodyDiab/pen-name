@@ -7764,13 +7764,13 @@ html {
   overflow-y: scroll;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%; }
-
+  
 p {
-  color: #FA7C91;
+  /*color: #FA7C91;*/
   font-weight: 700;
 }
 a {
-  color: #FA7C91;
+  /*color: #FA7C91;*/
   cursor: pointer;
   text-decoration: none; 
   font-weight: 700;
@@ -10953,3 +10953,45 @@ a.navbar-item,
       padding: 9rem 1.5rem; }
     .section.is-large {
       padding: 18rem 1.5rem; } }
+
+
+      html {
+        /*background-image: linear-gradient(-90deg, #22223b7c, #8c7d8a8a), url(./assets/1.jpg);*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        /*background-image: linear-gradient(rgba(140, 125, 138, 0.3), rgba(140, 125, 138, 0.3)), url(./assets/1.jpg)*/
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./assets/1.jpg)
+      }
+      .button {
+        background:rgba(140, 125, 138, 0.5);
+        color:#F8F4F1;
+        font-size: 1.25em;
+        border-color: #F8F4F1;
+        width: 50%
+      }
+      .button:hover {
+        background-color: rgba(248, 244, 241, 0.9);
+        color: #8c7d8a;
+        border-color: #8c7d8a;
+      }
+      .following a{
+        color: #F8F4F1;
+      }
+      .following:hover a{
+        color: #FA7C91;
+      }
+
+      .follow {
+        color: #D0B8B3;
+      }
+
+      .follow:hover {
+        color: #8c7d8a;
+      }
+
+      .section {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+      }

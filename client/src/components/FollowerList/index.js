@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 const FollowerList = ({ followerCount, username, followers }) => {
   if (!followers || !followers.length) {
-    return <p className="bg-dark text-light p-3">{username}, get some followers!</p>;
+    return <p className="bg-dark text-light p-3">{username}, follow some writers!</p>;
   }
 
   return (
-    <div>
-      <h5>
-        {username}'s {followerCount} {followerCount === 1 ? 'follower' : 'followers'}
+    <div className="following">
+      <h5 className="title is-5 mb-2" style={{ color: '#FA7C91' }}>
+        {username} is following {followerCount} {followerCount === 1 ? 'writer' : 'writers'}
       </h5>
       {followers.map(follower => (
-        <button className="btn w-100 display-block mb-2" key={follower._id}>
-          <Link to={`/profile/${follower.username}`}>{follower.username}</Link>
+        <button className="button is-fullwidth is-inverted is-outlined mb-2" key={follower._id}>
+          <Link  to={`/profile/${follower.username}`}>{follower.username} </Link>
         </button>
       ))}
     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { faFeatherAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom';
 
 const ProfilePostList = ({ posts, title }) => {
@@ -10,43 +11,40 @@ const ProfilePostList = ({ posts, title }) => {
   return (
     <section className="section">
       <div className="container py-4">
-      <h3 className="title has-text-left mb-3">{title}</h3>
-      <div className="mb-6" >
-      
-      {posts &&
-        posts.map(post => (
-          <div key={post._id} className="box" style={{backgroundColor:'#F8F4F1'}}>
-          <div class="media">
-          <figure class="media-left">
-    <p class="image is-64x64">
-      <img src="https://bulma.io/images/placeholders/128x128.png"/>
-    </p>
-  </figure>
-            <div class="media-content">
-          <h3 className="title is-3">Title</h3>
-            <p className="subtitle">
-              <Link
-                to={`/profile/${post.username}`}
-                style={{ fontWeight: 700 }}
-                className="text-light"
-              >
-                {post.username}
-              </Link>{' '}
-              posted on {post.createdAt}
-            </p>
-            <div className="content">
-              <Link to={`/post/${post._id}`}>
-                <p>{post.postText}</p>
-                <p className="mb-0">
-                Comments: {post.commentCount} || Click to{' '}
-                  {post.commentCount ? 'see' : 'start'} the discussion!
+        <h3 className="title has-text-left mb-3" style={{ color: '#D0B8B3' }}>{title}</h3>
+        <div className="mb-6" >
+        
+        {posts &&
+          posts.map(post => (
+          <div key={post._id} className="box" style={{backgroundColor:'rgba(140, 125, 138, 0.5)'}}>
+            <div className="media">
+              <figure className="media-left">
+                <p className="">
+                <FontAwesomeIcon icon={faFeatherAlt} size="lg" alt="icon" style={{ color: '#D0B8B3' }}/>
                 </p>
-              </Link>
+              </figure>
+              <div className="media-content">
+                <h3 className="title is-3" style={{ color: '#D0B8B3' }}>Title</h3>
+                  <p className="subtitle is-size-6" style={{ color: '#FA7C91' }}>
+                    <Link
+                      to={`/profile/${post.username}`}
+                    >
+                      {post.username}
+                    </Link>{' '}
+                    posted on {post.createdAt}
+                  </p>
+                <div className="content">
+                  <Link to={`/post/${post._id}`}>
+                    <p className="has-text-weight-normal is-size-5 " style={{ color: '#F8F4F1'}}>{post.postText}</p>
+                    <p className="mb-0">
+                    Comments: {post.commentCount} || Click to{' '}
+                      {post.commentCount ? 'see' : 'start'} the discussion!
+                    </p>
+                  </Link>
+                </div>
               </div>
-              </div>
-              </div>
-              </div>
-
+            </div>
+          </div>
         ))}
         </div>
         
