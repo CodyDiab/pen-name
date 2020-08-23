@@ -4,11 +4,16 @@ const commentSchema = require('./Comment');
 
 const postSchema = new Schema(
   {
+    title:{
+      type: String,
+      minlength: 1,
+      maxlength:80
+    },
     postText: {
       type: String,
       required: 'You need to leave a post!',
       minlength: 1,
-      maxlength: 280
+      maxlength: 1000
     },
     createdAt: {
       type: Date,

@@ -4,6 +4,7 @@ export const QUERY_POSTS = gql`
   query posts($username: String) {
     posts(username: $username) {
       _id
+      title
       postText
       createdAt
       username
@@ -22,6 +23,7 @@ export const QUERY_POST = gql`
   query post($id: ID!) {
     post(_id: $id) {
       _id
+      title
       postText
       createdAt
       username
