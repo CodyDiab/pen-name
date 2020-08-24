@@ -27,7 +27,7 @@ const SinglePost = props => {
   return (
 
     <div>
-      <div style={{ marginTop:'10px', border: '1px solid #F2E9E4'}}>
+      <div style={{ marginTop:'25px', border: '1px solid #F2E9E4'}}>
         <div className='card' style={{ backgroundColor:'#8C7D8A' }}>
           <p className='title has-text-centered' style={{ color:'#D0B8B3' }}>
             {post.username}
