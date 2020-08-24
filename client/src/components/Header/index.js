@@ -64,7 +64,7 @@ const Header = () => {
       <div className="navbar-start">
         {Auth.loggedIn() ? (
           <>
-          <span>Loged in as {userData.me.username}</span>
+          <span>Logged in as {userData.me.username}</span>
           <Link className="navbar-item" to="/profile" onClick={toggleNav}>Profile</Link>
           <Link className="navbar-item" to="/write" onClick={toggleNav}>Write</Link>
           <Link className="navbar-item" to="/" onClick={logout}>
