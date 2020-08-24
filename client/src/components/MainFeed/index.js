@@ -72,7 +72,7 @@ if(!viewFollowing) {
         <li className= 'is-active'><a onClick={() => setViewFollowing(false)}>View All</a></li>
         {Auth.loggedIn() ? (
         <li className=''><a onClick={() => setViewFollowing(true)}>View Following</a></li>
-        ):(<li>loggin to view followed posts</li>)}
+        ):(<li>log in to view followed posts</li>)}
         </ul>
     
     </div>
