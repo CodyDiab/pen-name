@@ -51,7 +51,7 @@ $tabs-toggle-link-active-border-color:$mountbatenpink;
 $tabs-toggle-link-active-color:$mountbatenpink;
 
 // Update some of Bulma's component variables
-$body-background-color:$raisin-black;
+//$body-background-color:$raisin-black;
 $control-border-width: 2px;
 $input-border-color:$silverpink, transparent;
 $input-shadow: none;
@@ -70,6 +70,13 @@ $button-background-color:$mountbatenpink;
 @import "../../node_modules/bulma/sass/components/navbar.sass";
 @import "../../node_modules/bulma/sass/layout/hero.sass";
 @import "../../node_modules/bulma/sass/layout/section.sass";
+
+html {
+    min-height: 100%
+}
+body {
+  min-height: 100vh;
+}
 
 .main{
     font-family: $family-sans-serif;
