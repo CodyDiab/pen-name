@@ -3,7 +3,7 @@ import React from 'react';
 import Toggle from './Toggle';
 import useDarkMode from 'use-dark-mode';
 
-const DarkModeToggle = () => {
+const ChangeTheme = () => {
   const darkMode = useDarkMode(false);
 
   return (
@@ -19,4 +19,4 @@ const DarkModeToggle = () => {
   );
 };
 
-export default DarkModeToggle;
+export default ChangeTheme;

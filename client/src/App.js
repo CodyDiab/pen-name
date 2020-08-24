@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import DarkModeToggle from './DarkModeToggle';
+import ChangeTheme from './ChangeTheme';
 // add these two library import statements
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
@@ -42,7 +42,7 @@ const App = () => {
           
           <div className="container">
           <div className="navbar">
-        <DarkModeToggle />
+        <ChangeTheme />
       </div>
             <Switch>
               <Route exact path="/" component={Home} />
