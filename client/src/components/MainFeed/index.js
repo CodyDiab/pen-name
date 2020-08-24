@@ -146,9 +146,9 @@ if(!viewFollowing) {
     })
     return outPut
   }
-   console.log(joinFollowPosts(preSort))
+  //  console.log(joinFollowPosts(preSort))
 const sortedByFollowing=(joinFollowPosts(preSort))
-
+console.log(sortedByFollowing);
 
           return (
             <div className="container">
@@ -160,8 +160,8 @@ const sortedByFollowing=(joinFollowPosts(preSort))
                 </ul>
             
             </div>
-              {sortedByFollowing &
-              sortedByFollowing.map(post => (
+              {
+              joinFollowPosts(preSort).map(post => (
                   <section className="section">
                   <div key={post._id} className="card">
                     <p className="card-header">
@@ -172,7 +172,7 @@ const sortedByFollowing=(joinFollowPosts(preSort))
         
                       <Link to={`/post/${post._id}`}>
                         <p>{post.postText}</p>
-                        <p className="mb-0">
+                        <p className="tag is-rounded">
                         Comments: {post.commentCount} || Click to{' '}
                           {post.commentCount ? 'see' : 'start'} the discussion!
                         </p>
@@ -180,23 +180,24 @@ const sortedByFollowing=(joinFollowPosts(preSort))
                     </div>
                    
                     <footer className="card-footer">
-                      <p className="card-footer-item">
-                        Author:
+                    <div className="tags has-addons">
+                      <span className="tag ">
+                      Author:
                       <Link
-                        to={`/profile/${post.username}`}
-                        style={{ fontWeight: 700 }}
-                        className="text-light"
-                      >  {post.username}
-                       </Link>
-                       <br></br>
-                       <time>
-                     {' '}
-                     {post.createdAt}
-                      </time>
-                      </p>
-                     
-        
-                    </footer>
+                       to={`/profile/${post.username}`}
+                       style={{ fontWeight: 700 }}>
+                
+                   {post.username}
+                   </Link><br/>
+                   </span>
+                   <span className="tag is-light">
+                   {' '}
+                   {post.createdAt}
+                  </span>
+                  </div>
+             
+
+                   </footer>
                   </div>
                   </section>
                 ))}

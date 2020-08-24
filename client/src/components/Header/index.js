@@ -1,14 +1,17 @@
-import React,{useEffect,useQuery} from 'react';
+import React,{useEffect} from 'react';
 import {TOGGLE_NAV} from '../../utils/actions';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
-// import {QUERY_ME_BASIC} from '../../utils/queries';
+import {QUERY_ME_BASIC} from '../../utils/queries';
+import { useQuery } from '@apollo/react-hooks';
 
 import { Link } from 'react-router-dom';
 
 const Header = () => {
 
-  // const { data } = useQuery(QUERY_ME_BASIC);
+  const { data:userData } = useQuery(QUERY_ME_BASIC);
+  console.log(userData)
+
   const [state, dispatch] = useStoreContext();
 
   const logout = event => {
@@ -61,7 +64,7 @@ const Header = () => {
       <div className="navbar-start">
         {Auth.loggedIn() ? (
           <>
-         
+          <span>Loged in as {userData.me.username}</span>
           <Link className="navbar-item" to="/profile" onClick={toggleNav}>Profile</Link>
           <Link className="navbar-item" to="/write" onClick={toggleNav}>Write</Link>
           <Link className="navbar-item" to="/" onClick={logout}>
