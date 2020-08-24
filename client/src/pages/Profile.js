@@ -19,8 +19,9 @@ const Profile = () => {
     variables: {username: userParam}
   });
 
-  const user = data?.me||data?.user || {};
   
+  const user = data?.me||data?.user || {};
+  console.log(user.posts)
 //   // redirect to personal profile page if username is the logged-in user's
 //if (Auth.loggedIn() && Auth.getProfile().data.username.toLowerCase() === userParam.toLowerCase()) {
 if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {

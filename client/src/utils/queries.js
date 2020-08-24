@@ -51,6 +51,7 @@ export const QUERY_USER = gql`
       }
       posts {
         _id
+        title
         postText
         createdAt
         commentCount
@@ -68,6 +69,7 @@ export const QUERY_ME = gql`
       followerCount
       posts {
         _id
+        title
         postText
         createdAt
         commentCount

@@ -37,6 +37,7 @@ const SinglePost = props => {
           </p>
           
           <div className='card-content'>
+            <p style={{ color:'#F2E9E4' }} className="title">{post.title}</p>
             <p style={{ color:'#F2E9E4' }}>{post.postText}</p>
           </div>
         </div>

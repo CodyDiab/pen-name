@@ -7,7 +7,7 @@ const ProfilePostList = ({ posts, title }) => {
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
   }
-
+ console.log(posts)
   return (
     <section className="section">
       <div className="container py-4">
@@ -24,7 +24,7 @@ const ProfilePostList = ({ posts, title }) => {
                 </p>
               </figure>
               <div className="media-content">
-                <h3 className="title is-3" style={{ color: '#D0B8B3' }}>Title</h3>
+          <h3 className="title is-3" style={{ color: '#D0B8B3' }}>{post.title}</h3>
                   <p className="subtitle is-size-6" style={{ color: '#FA7C91' }}>
                     <Link
                       to={`/profile/${post.username}`}
