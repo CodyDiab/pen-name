@@ -74,7 +74,7 @@ const PostForm = () => {
         className="flex-row justify-center justify-space-between-md align-stretch"
         onSubmit={handleFormSubmit}
       >
-          <input className="input" 
+          <input className="input field" 
           name="title"
           type="text"
           placeholder="Title"
@@ -86,7 +86,7 @@ const PostForm = () => {
           value={formState.postText}
           type="text"
           name="postText"
-          className="textarea"
+          className="textarea field"
           rows="17"
           onChange={handleChange}
         ></textarea>
