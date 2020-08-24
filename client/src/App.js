@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ChangeTheme from './ChangeTheme';
+
 // add these two library import statements
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
@@ -41,9 +41,7 @@ const App = () => {
           <Header />
           
           <div className="container">
-          <div className="navbar">
-        <ChangeTheme />
-      </div>
+          
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />

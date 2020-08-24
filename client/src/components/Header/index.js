@@ -4,7 +4,7 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import {QUERY_ME_BASIC} from '../../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
-
+import ChangeTheme from '../ChangeTheme';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -41,6 +41,11 @@ const Header = () => {
       <span aria-hidden="true"></span>
     </a>
      </div>
+     <div className="navbar-end">
+     <div class="navbar-item">
+        <ChangeTheme />
+      </div>
+      </div> 
     </nav>
     )
   } else {
@@ -78,6 +83,9 @@ const Header = () => {
       </div>
       <div className="navbar-end"></div>
       </div>
+
+       
+
       </nav>
      ) 
       
