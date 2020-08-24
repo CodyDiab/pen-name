@@ -262,7 +262,7 @@ th {
     text-align: inherit; }
 
 html {
-  background-color: #191b24;
+  /*background-color: #191b24;*/
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -7183,7 +7183,7 @@ th {
     text-align: inherit; }
 
 html {
-  background-color: #191b24;
+  /*background-color: #191b24;*/
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -10387,17 +10387,17 @@ a.navbar-item,
   border-radius: 4px; }
 
 /* #home-body {
-  background-color: #191b24; } */
+  background-color: #191b24; } 
   html {
-    /*background-image: linear-gradient(-90deg, #22223b7c, #8c7d8a8a), url(./assets/1.jpg);*/
+    //background-image: linear-gradient(-90deg, #22223b7c, #8c7d8a8a), url(./assets/1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    /*background-image: linear-gradient(rgba(140, 125, 138, 0.3), rgba(140, 125, 138, 0.3)), url(./assets/1.jpg)*/
+    //background-image: linear-gradient(rgba(140, 125, 138, 0.3), rgba(140, 125, 138, 0.3)), url(./assets/1.jpg)
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./assets/1.jpg)
   }
 @media only screen and (max-width: 600px) {
   html {
     background-color: #191b24;
-    background-image: none; } }
+    background-image: none; } }*/

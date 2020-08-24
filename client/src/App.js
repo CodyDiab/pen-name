@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import DarkModeToggle from './DarkModeToggle';
 // add these two library import statements
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
-
+import './sass/styles.scss';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -30,14 +30,20 @@ const client = new ApolloClient({
   uri: '/graphql'
 });
 
-function App() {
+const App = () => {
   return (
+    
     <ApolloProvider client={client}>
       <Router>
         <StoreProvider>
+          
         <div className="main">
           <Header />
+          
           <div className="container">
+          <div className="navbar">
+        <DarkModeToggle />
+      </div>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
@@ -54,6 +60,7 @@ function App() {
         </StoreProvider>
       </Router>
     </ApolloProvider>
+    
   );
 }
 

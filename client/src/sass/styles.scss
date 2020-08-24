@@ -17,6 +17,7 @@ $mountbatenpink:#8c7d8a;
 $mountbatenpinktransparent:#8c7d8a9f;
 $silverpink:#D0B8B3;
 $isabelline:#F2E9E4;
+$isabelline2:#F8F4F1;
 
 
 // Update Bulma's global variables
@@ -43,7 +44,7 @@ $tabs-link-hover-color:$mountbatenpinktransparent;
 $tabs-link-hover-border-bottom-color:$mountbatenpinktransparent;
 $tabs-link-active-border-bottom-color:$mountbatenpink;
 $tabs-link-active-color:$silverpink;
-$tabs-link-color:$isabelline;
+$tabs-link-color:$mountbatenpink;
 $tabs-border-bottom-color:$isabelline;
 $tabs-toggle-link-active-background-color:$mountbatenpink;
 $tabs-toggle-link-active-border-color:$mountbatenpink;
@@ -91,13 +92,158 @@ $button-background-color:$mountbatenpink;
     border-radius: $radius;
 }
 
-#home-body{
+/*#home-body{
     background-color:$raisin-black;
+}*/
+
+.section {
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
 }
 
+body.light-mode {
+    background-color: $isabelline;
+    color: #333;
+    transition: background-color 0.3s ease;
+  }
+  body.light-mode .box {
+    background-color: $isabelline2;
+  }
+
+  body.light-mode button {
+    background-color: $silverpink;
+    
+  }
+  body.light-mode .following {
+    color: $isabelline;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  
+  body.dark-mode {
+    background-color: $raisin-black;
+    color: #dfdfdf;
+  
+    .navbar {
+      background-color: $spacecadet;
+    }
+  
+    .dark-mode-toggle > button {
+      color: #999;
+      &:last-child {
+        color: lightblue;
+      }
+    }
+    .graphic{
+    width:200px;
+    height:50px;
+    background:$isabelline;
+    border-radius: $radius;
+}
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    background-color: $silverpink;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .container {
+    padding: 20px;
+  }
+  
+  body.dark-mode a {
+    color: #fa7c91;
+  }
+  body.dark-mode .following {
+    color: $mountbatenpink;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  body.dark-mode .comments {
+    color: #fa7c91;
+    
+  }
+  body.dark-mode p {
+    color: $isabelline;
+  }
+  body.dark-mode button {
+    background-color: $spacecadet;
+    color: $isabelline;
+  }
+  body.dark-mode .box {
+    background-color: $spacecadet;
+}
+  .dark-mode-toggle {
+    display: flex;
+    margin: 0 auto;
+    & > button {
+      font-size: 1.2em;
+      background: none;
+      border: none;
+      color: #ffe600;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      &:last-child {
+        color: #666;
+      }
+  
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  
+  .toggle-control {
+    position: relative;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type='checkbox'].dmcheck {
+    width: 40px;
+    height: 10px;
+    background: #555;
+    position: relative;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    vertical-align: 2px;
+    outline: none;
+  
+    &:checked + label {
+      left: 30px;
+    }
+  
+    &:focus-visible {
+      outline: solid 2px white;
+    }
+  
+    & + label {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: absolute;
+      left: 2px;
+      background: #fff;
+      opacity: 0.9;
+      background-color: #f6f6f6;
+    }
+  }
+
 @media only screen and (max-width:600px) {
-  html {
+  /*html {
       background-color: $raisin-black;
       background-image: none;
-    }
+    }*/
   }

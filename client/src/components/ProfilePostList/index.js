@@ -16,7 +16,7 @@ const ProfilePostList = ({ posts, title }) => {
         
         {posts &&
           posts.map(post => (
-          <div key={post._id} className="box" style={{backgroundColor:'rgba(140, 125, 138, 0.5)'}}>
+          <div key={post._id} className="box">
             <div className="media">
               <figure className="media-left">
                 <p className="">
@@ -35,8 +35,8 @@ const ProfilePostList = ({ posts, title }) => {
                   </p>
                 <div className="content">
                   <Link to={`/post/${post._id}`}>
-                    <p className="has-text-weight-normal is-size-5 " style={{ color: '#F8F4F1'}}>{post.postText}</p>
-                    <p className="mb-0">
+                    <p className="has-text-weight-normal is-size-5 ">{post.postText}</p>
+                    <p className="mb-0 comments">
                     Comments: {post.commentCount} || Click to{' '}
                       {post.commentCount ? 'see' : 'start'} the discussion!
                     </p>
