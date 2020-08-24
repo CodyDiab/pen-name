@@ -107,25 +107,32 @@ body {
     padding-top: 2rem;
     padding-bottom: 0.5rem;
 }
+.toggle {
+    display: flex;
+    justify-content: center;
+}
 body.light-mode {
     background-color: $isabelline;
     color: #333;
     transition: background-color 0.3s ease;
-  }
-  body.light-mode .box {
-    background-color: $isabelline2;
-  }
+}
+body.light-mode .box {
+background-color: $isabelline2;
+}
 
-  body.light-mode button {
-    background-color: $silverpink;
-    
-  }
-  body.light-mode .following {
-    color: $isabelline;
-    font-weight: 700;
-    font-size: 18px;
-  }
-  body.light-mode .card-header {
+body.light-mode button {
+background-color: $silverpink;
+
+}
+body.light-mode button.toggle-icons{
+background-color: $isabelline;
+}
+body.light-mode .following {
+color: $isabelline;
+font-weight: 700;
+font-size: 18px;
+}
+body.light-mode .card-header {
     background-color: $isabelline2;
 }
 body.light-mode .card-footer {
@@ -146,19 +153,19 @@ body.light-mode .tabs li a {
     color: $mountbatenpink;
     border-bottom-color: $isabelline2;
 }
-  body.dark-mode {
+body.dark-mode {
     background-color: $raisin-black;
     color: #dfdfdf;
-  
+
     .navbar {
-      background-color: $spacecadet;
+        background-color: $spacecadet;
     }
-  
+
     .dark-mode-toggle > button {
-      color: #999;
-      &:last-child {
+        color: #999;
+        &:last-child {
         color: lightblue;
-      }
+        }
     }
     .graphic{
     width:200px;
@@ -171,7 +178,7 @@ body.light-mode .tabs li a {
     position: fixed;
     top: 0;
     width: 100%;
-    /*display: flex;*/
+    display: flex;
     background-color: $silverpink;
     padding: 15px;
     margin-bottom: 10px;
@@ -200,6 +207,9 @@ body.light-mode .tabs li a {
   body.dark-mode button {
     background-color: $spacecadet;
     color: $isabelline;
+  }
+  body.dark-mode button.toggle-icons{
+    background-color: $raisin-black;
   }
   body.dark-mode .box {
     background-color: $spacecadet;
@@ -237,7 +247,7 @@ body.dark-mode .tabs ul {
       font-size: 1.2em;
       background: none;
       border: none;
-      color: #ffe600;
+      color: #ffc400;
       cursor: pointer;
       transition: color 0.3s ease;
       &:last-child {

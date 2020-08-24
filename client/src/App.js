@@ -7,7 +7,7 @@ import ApolloClient from 'apollo-boost';
 import './sass/styles.scss';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+import ChangeTheme from './components/ChangeTheme';
 import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
 import SinglePost from './pages/SinglePost';
@@ -41,7 +41,9 @@ const App = () => {
           <Header />
           
           <div className="container">
-          
+            <div className="container toggle">
+            <ChangeTheme />
+            </div>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
