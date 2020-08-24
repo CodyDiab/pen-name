@@ -89,6 +89,21 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
             followerCount={user.followerCount}
             followers={user.followers}
           />
+          {/* <form action="/charge" method="POST">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="{{stripePublishableKey}}"
+              data-amount="1000"
+              data-name="Hire Writer"
+              data-description="Personal Writer"
+              data-image="/img/marketplace.png"
+              data-locale="auto">
+            </script>
+            <script>
+              document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+            </script>
+            <button type="submit" className='button is-normal'>Hire For $10</button>
+          </form> */}
           
           </div>
 

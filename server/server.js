@@ -5,6 +5,7 @@ const { authMiddleware } = require('./utils/auth');
 require('dotenv').config()
 
 const path = require('path');
+const stripe = require('stripe')('')
 
 // import our typeDefs and resolvers
 const { typeDefs, resolvers } = require('./schemas');

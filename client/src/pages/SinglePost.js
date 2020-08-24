@@ -2,7 +2,7 @@ import React from 'react';
 
 import Auth from '../utils/auth';
 
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_POST } from '../utils/queries';
@@ -29,8 +29,8 @@ const SinglePost = props => {
     <div>
       <div style={{ marginTop:'25px', border: '1px solid #F2E9E4'}}>
         <div className='card' style={{ backgroundColor:'#8C7D8A' }}>
-          <p className='title has-text-centered' style={{ color:'#D0B8B3' }}>
-            {post.username}
+          <p className='title has-text-centered'>
+            <Link to={`/profile/${post.username}`} style={{ color:'#D0B8B3' }}>{post.username}</Link>
           </p>
           <p className='subtitle has-text-centered' style={{ color:'#F2E9E4' }}>
             post on {post.createdAt}

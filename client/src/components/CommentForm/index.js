@@ -52,7 +52,7 @@ const CommentForm = ({ postId }) => {
           rows="3"
         ></textarea>
 
-        <button className='button is-normal is-rounded' type="submit" style={{ marginTop:'5px' }}>
+        <button className='button is-normal' type="submit" style={{ marginTop:'5px' }}>
           Submit
         </button>
       </form>
