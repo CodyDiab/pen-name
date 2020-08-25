@@ -13,11 +13,12 @@ $charcoal-blue: #22223B;
 //our colours
 $raisin-black:#191b24;
 $spacecadet:#22223B;
+$spacecadet2:#34345b9d;
 $mountbatenpink:#8c7d8a;
 $mountbatenpinktransparent:#8c7d8a9f;
 $silverpink:#D0B8B3;
 $isabelline:#F2E9E4;
-$isabelline2:#F8F4F1;
+$isabelline2:#f8f4f1;
 $xiketic: #0E0E1B;
 
 // Update Bulma's global variables
@@ -74,6 +75,7 @@ $button-background-color:$mountbatenpink;
 html {
     min-height: 100%
 }
+
 body {
   min-height: 100vh;
 }
@@ -93,10 +95,9 @@ body {
     display: revert;
 }
 .graphic{
-    width:200px;
-    height:50px;
-    background:$isabelline;
-    border-radius: $radius;
+    width:180px;
+    height:80px;
+    margin-right: 10px;
 }
 
 /*#home-body{
@@ -167,21 +168,13 @@ body.dark-mode {
         color: lightblue;
         }
     }
-    .graphic{
-    width:200px;
-    height:50px;
-    background:$isabelline;
-    border-radius: $radius;
-}
+    .graphic {
+        /*background: $mountbatenpinktransparent;*/
+
+    }
   }
   .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    background-color: $silverpink;
-    padding: 15px;
-    margin-bottom: 10px;
+    background-color: #a5918d;
   }
   
   
@@ -190,7 +183,7 @@ body.dark-mode {
   }
   
   body.dark-mode a {
-    color: #fa7c91;
+    color: $pink;
   }
   body.dark-mode .following {
     color: $mountbatenpink;
@@ -198,7 +191,7 @@ body.dark-mode {
     font-size: 18px;
   }
   body.dark-mode .comments {
-    color: #fa7c91;
+    color: $pink;
     
   }
   body.dark-mode p {
@@ -229,7 +222,7 @@ body.dark-mode .tag {
     color: $isabelline2;
 }
 body.dark-mode .tabs li.is-active a {
-    color: #fa7c91;
+    color: $pink;
     border-bottom-color: $isabelline2;
 }
 body.dark-mode .tabs li a {

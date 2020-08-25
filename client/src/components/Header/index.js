@@ -28,14 +28,14 @@ const Header = () => {
   
  if (!state.navActive){
     return(
-      <nav className="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
-        <Link to="/" className="">
-        <img className="graphic"src={require("../../resources/PenNameGraphic.svg")}></img>
+      <nav className="navbar  is-fixed-top" role="navigation" aria-label="main navigation">
+      <div className="navbar-brand" >
+        <Link to="/" className="logo">
+        <img className="graphic"src={require("../../resources/PenNameGraphicLight.svg")}></img>
           {/* <h1 className="main-title">Pen Name</h1>*/ }
           </Link>
         
-          <a role="button" onClick={toggleNav} className="navbar-burger" id="" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <a role="button" onClick={toggleNav} className="navbar-burger burger" id="" aria-label="menu" aria-expanded="false" data-target="navMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -67,10 +67,10 @@ const Header = () => {
       <nav className="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to="/" className="">
-        <img className="graphic"src={require("../../resources/PenNameGraphic.svg")}></img>
+        <img className="graphic"src={require("../../resources/PenNameGraphicLight.svg")}></img>
         </Link>
         
-        <a role="button" onClick={toggleNav} className="navbar-burger is-active" id="" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <a role="button" onClick={toggleNav} className="navbar-burger burger is-active" id="" aria-label="menu" aria-expanded="false" data-target="navMenu">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -80,15 +80,20 @@ const Header = () => {
   
        <div id="navMenu" className="navbar-menu is-active "> 
         <div className="navbar-start">
+          
           {Auth.loggedIn() ? (
             <>
-            <span>Logged in as {userData.me.username}</span>
+            
             <Link className="navbar-item" to="/profile" onClick={toggleNav}>Profile</Link>
             <Link className="navbar-item" to="/write" onClick={toggleNav}>Write</Link>
             <Link className="navbar-item" to="/" onClick={logout}>
              Logout
             </Link>
+            <div className="navbar-end">
+            <span className="navbar-item">Logged in as {userData.me.username}</span>
+            </div>
             </>
+            
           ):(  <>
             <Link  className="navbar-item" to="/login" onClick={toggleNav}>Login</Link>
             <Link  className="navbar-item" to="/signup" onClick={toggleNav}>Signup</Link>
