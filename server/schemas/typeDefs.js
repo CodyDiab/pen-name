@@ -46,6 +46,7 @@ const typeDefs = gql`
         addPost(postText: String!,title:String): Post
         addComment(postId: ID!, commentBody: String!): Post
         addFollower(followerId: ID!): User
+        addAbout( aboutText: String):User
     }
 
     type Auth {

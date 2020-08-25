@@ -37,6 +37,14 @@ export const ADD_FOLLOWER = gql`
     }
   }
 `;
+export const ADD_ABOUT = gql`
+mutation addAbout($text:String){
+  addAbout(aboutText: $text){
+    _id
+    username
+    about
+  }
+}`;
 
 export const ADD_POST = gql`
   mutation addPost($title:String, $postText: String!) {

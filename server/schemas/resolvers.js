@@ -115,6 +115,17 @@ const resolvers = {
         }
         
         throw new AuthenticationError('You need to be logged in!');
+        },
+        addAbout: async (parent, {aboutText}, context) => {
+            if (context.user) {
+                const updatedUser = await User.findOneAndUpdate(
+                    {_id: context.user._id},
+                    { $set: {about:aboutText}},
+                    {new:true}
+                ).populate('about');
+
+                return updatedUser;
+            }
         }
     }
 };

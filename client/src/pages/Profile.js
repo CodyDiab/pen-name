@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Redirect, useParams } from 'react-router-dom'; //Redirect,
 import ProfilePostList from '../components/ProfilePostList';
 import { useQuery, useMutation} from '@apollo/react-hooks';
@@ -19,6 +19,9 @@ const Profile = () => {
     variables: {username: userParam}
   });
 
+  //modal handler ////////////////////////////////////////////////
+  const [modalOpen, setModalOpen] = useState()
+  ////////////////////////////////////////////////////////////////
   
   const user = data?.me||data?.user || {};
   console.log(user.posts)
@@ -61,13 +64,21 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
         
       <div className="columns">
         <div className="column is-6">
-         
+         {!user.about? (
+            <h4 className="title is-spaced is-4" style={{ color: '#D0B8B3' }}>
+            About {userParam ? `${user.username}`: 'me'}
+            <button className="button" onClick={() => setModalOpen(true)}>Add About</button>
+            </h4>
+           
+         ):(
+           <>
           <h4 className="title is-spaced is-4" style={{ color: '#D0B8B3' }}>
           About {userParam ? `${user.username}`: 'me'}
           </h4>
-          <p className="subtitle">{user.about}Farm-to-table pitchfork shaman bespoke williamsburg artisan vexillologist, lo-fi mlkshk four dollar toast chia hexagon art party drinking vinegar dreamcatcher. Literally meh gentrify taxidermy, 90's knausgaard butcher. Humblebrag art party pabst hella. Next level actually health goth, tacos air plant microdosing twee vexillologist portland fam. Marfa pork belly beard next level tbh slow-carb pug. Paleo selfies fanny pack la croix, farm-to-table chia post-ironic XOXO yuccie put a bird on it distillery.</p> 
-        
-       
+          <p className="subtitle">{user.about}</p> 
+         </>
+         )
+         }
         
         
         <div>
@@ -126,7 +137,24 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
 
         
       </div>
-      
+      {/* about text modal */}
+      <div className={`modal ${modalOpen && 'is-active'}`}>
+         <div className="modal-background"></div>
+           <div className="modal-card">
+             <header className="modal-card-head">
+                  <p className="modal-card-title">Edit About</p>
+                  
+                   </header>
+                    <section className="modal-card-body">
+                    <textarea class="textarea"  rows="10">About text</textarea>
+                  </section>
+                 <footer className="modal-card-foot">
+                <button className="button is-success">Save changes</button>
+               <button className="button" onClick={() => setModalOpen(false)} >Cancel</button>
+               </footer>
+         </div>
+     </div>
+
     </div>
     
 
