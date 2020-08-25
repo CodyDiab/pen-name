@@ -38,11 +38,11 @@ export const ADD_FOLLOWER = gql`
   }
 `;
 export const ADD_ABOUT = gql`
-mutation addAbout($text:String){
-  addAbout(aboutText: $text){
+mutation addAbout($aboutText:String){
+  addAbout(aboutText: $aboutText){
     _id
     username
-    about
+    aboutText
   }
 }`;
 

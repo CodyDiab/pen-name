@@ -24,25 +24,7 @@ const Profile = () => {
   const [modalOpen, setModalOpen] = useState()
   const [aboutText,setText] = useState('')
   const [addAbout, { error }] = useMutation(ADD_ABOUT) 
-    // update(cache, { data: { addAbout } }) {
-      // try {
-      //   // could potentially not exist yet, so wrap in a try...catch
-      //   const { posts } = cache.readQuery({ query: QUERY_POSTS });
-      //   cache.writeQuery({
-      //     query: QUERY_POSTS,
-      //     data: { posts: [addPost, ...posts] }
-      //   });
-      // } catch (e) {
-      //   console.error(e);
-      // }
-
-  //     const { me } = cache.readQuery({ query: QUERY_ME });
-  //     cache.writeQuery({
-  //       query: QUERY_ME,
-  //       data: { me: 
-  //     });
-  //   }
-  // });
+  
 
   const handleChange = event => {
    
@@ -56,22 +38,20 @@ const Profile = () => {
     // console.log(formState)
   };
 
-  const handleFormSubmit = async () => {
-    //event.preventDefault();
-  
+  const handleAboutFormSubmit = async event => {
+    event.preventDefault();
+     
     try {
-        const { data } = await addAbout({
-        variables: {aboutText}
+      
+        await addAbout({
+        variables:{aboutText}
       });
-     setModalOpen(false)
-      // clear form value
-    //  setFormState('')
-    //   setText('');
-    //   setCharacterCount(0);
-    console.log(data)
     } catch (e) {
       console.error(e);
     }
+    setModalOpen(false)
+    console.log(aboutText)
+    console.log(data)
   };
   ////////////////////////////////////////////////////////////////
   
@@ -85,7 +65,7 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
 }
 
   if(loading) {
-    return <div>Loading...</div>
+    return <progress className="progress is-medium is-dark" max="100">Loading</progress>
   }
   if (!user?.username) {
     return (
@@ -117,22 +97,26 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
         
       <div className="columns">
         <div className="column is-6">
-         {!user.about? (
+         {!user.aboutText? (
             <h4 className="title is-spaced is-4" style={{ color: '#D0B8B3' }}>
-            About {userParam ? `${user.username}`: 'me'}
-            <button className="button" onClick={() => setModalOpen(true)}>Add About</button>
-            </h4>
+            About{userParam ? ` ${user.username}`: ' me'}
+            <section>
+           {userParam ? <p></p> : <button className="button" onClick={() => setModalOpen(true)}>Add About</button>}
+           </section>
+          </h4>
            
          ):(
            <>
           <h4 className="title is-spaced is-4" style={{ color: '#D0B8B3' }}>
-          About {userParam ? `${user.username}`: 'me'}
+          About {userParam ? ` ${user.username}`: ' me'}
           </h4>
-          <p className="subtitle">{user.about}</p> 
-         </>
+          <p className="subtitle">{user.aboutText}</p> 
+          {!userParam? <p></p> :
+           <button className="button" onClick={() => setModalOpen(true)}>Edit About</button> }
+           </>
          )
-         }
-        
+        }
+         
         
         <div>
 
@@ -198,18 +182,18 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
                   <p className="modal-card-title">Edit About</p>
                   
                    </header>
-                    <form className="modal-card-body" >
+                    <form className="modal-card-body" onSubmit={handleAboutFormSubmit}>
                     <textarea
-                      class="textarea" 
+                      className="textarea" 
                       rows="10"
                       name="aboutText"
                       value={aboutText}
                       onChange={handleChange}
                       >About text</textarea>
-                      
+                      <button className="button is-success" type="submit">Save changes</button>
                   </form>
                  <footer className="modal-card-foot">
-                 <button className="button is-success" type="submit" onClick={handleFormSubmit}>Save changes</button>
+                 
                <button className="button" onClick={() => setModalOpen(false)} >Cancel</button>
                </footer>
          </div>
