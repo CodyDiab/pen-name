@@ -3,7 +3,7 @@ import { Redirect, useParams } from 'react-router-dom'; //Redirect,
 import ProfilePostList from '../components/ProfilePostList';
 import { useQuery, useMutation} from '@apollo/react-hooks';
 import { QUERY_USER,QUERY_ME} from '../utils/queries';
-import { ADD_FOLLOWER} from '../utils/mutations';
+import { ADD_FOLLOWER,ADD_ABOUT} from '../utils/mutations';
 import FollowerList from '../components/FollowerList';
 import PostForm from '../components/PostForm';
 import Auth from '../utils/auth';
@@ -20,11 +20,64 @@ const Profile = () => {
   });
 
   //modal handler ////////////////////////////////////////////////
+  // const [formState, setFormState] = useState({ aboutText:''});
   const [modalOpen, setModalOpen] = useState()
+  const [aboutText,setText] = useState('')
+  const [addAbout, { error }] = useMutation(ADD_ABOUT) 
+    // update(cache, { data: { addAbout } }) {
+      // try {
+      //   // could potentially not exist yet, so wrap in a try...catch
+      //   const { posts } = cache.readQuery({ query: QUERY_POSTS });
+      //   cache.writeQuery({
+      //     query: QUERY_POSTS,
+      //     data: { posts: [addPost, ...posts] }
+      //   });
+      // } catch (e) {
+      //   console.error(e);
+      // }
+
+  //     const { me } = cache.readQuery({ query: QUERY_ME });
+  //     cache.writeQuery({
+  //       query: QUERY_ME,
+  //       data: { me: 
+  //     });
+  //   }
+  // });
+
+  const handleChange = event => {
+   
+    setText(event.target.value)
+    console.log(aboutText);
+   
+    // setFormState({
+    //   ...formState,
+    //   [name]: value,
+    // });
+    // console.log(formState)
+  };
+
+  const handleFormSubmit = async () => {
+    //event.preventDefault();
+  
+    try {
+        const { data } = await addAbout({
+        variables: {aboutText}
+      });
+     setModalOpen(false)
+      // clear form value
+    //  setFormState('')
+    //   setText('');
+    //   setCharacterCount(0);
+    console.log(data)
+    } catch (e) {
+      console.error(e);
+    }
+  };
   ////////////////////////////////////////////////////////////////
   
   const user = data?.me||data?.user || {};
-  console.log(user.posts)
+  
+  
 //   // redirect to personal profile page if username is the logged-in user's
 //if (Auth.loggedIn() && Auth.getProfile().data.username.toLowerCase() === userParam.toLowerCase()) {
 if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -145,11 +198,18 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
                   <p className="modal-card-title">Edit About</p>
                   
                    </header>
-                    <section className="modal-card-body">
-                    <textarea class="textarea"  rows="10">About text</textarea>
-                  </section>
+                    <form className="modal-card-body" >
+                    <textarea
+                      class="textarea" 
+                      rows="10"
+                      name="aboutText"
+                      value={aboutText}
+                      onChange={handleChange}
+                      >About text</textarea>
+                      
+                  </form>
                  <footer className="modal-card-foot">
-                <button className="button is-success">Save changes</button>
+                 <button className="button is-success" type="submit" onClick={handleFormSubmit}>Save changes</button>
                <button className="button" onClick={() => setModalOpen(false)} >Cancel</button>
                </footer>
          </div>
