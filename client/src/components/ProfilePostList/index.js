@@ -25,7 +25,7 @@ const ProfilePostList = ({ posts, title }) => {
               </figure>
               <div className="media-content">
           <h3 className="title is-3" style={{ color: '#D0B8B3' }}>{post.title}</h3>
-                  <p className="subtitle is-size-6" style={{ color: '#FA7C91' }}>
+                  <p className="subtitle is-size-6">
                     <Link
                       to={`/profile/${post.username}`}
                     >

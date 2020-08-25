@@ -8,7 +8,7 @@ const FollowerList = ({ followerCount, username, followers }) => {
 
   return (
     <div className="following">
-      <h5 className="title is-5 mb-2 " style={{ color: '#FA7C91' }}>
+      <h5 className="title is-5 mb-2 followcount" >
         {username} is following {followerCount} {followerCount === 1 ? 'writer' : 'writers'}
       </h5>
       {followers.map(follower => (

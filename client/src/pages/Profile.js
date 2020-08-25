@@ -65,7 +65,7 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
           <h4 className="title is-spaced is-4" style={{ color: '#D0B8B3' }}>
           About {userParam ? `${user.username}`: 'me'}
           </h4>
-          <p className="subtitle">{user.about}Farm-to-table pitchfork shaman bespoke williamsburg artisan vexillologist, lo-fi mlkshk four dollar toast chia hexagon art party drinking vinegar dreamcatcher. Literally meh gentrify taxidermy, 90's knausgaard butcher. Humblebrag art party pabst hella. Next level actually health goth, tacos air plant microdosing twee vexillologist portland fam. Marfa pork belly beard next level tbh slow-carb pug. Paleo selfies fanny pack la croix, farm-to-table chia post-ironic XOXO yuccie put a bird on it distillery.</p> 
+          <p className="subtitle about">{user.about}Farm-to-table pitchfork shaman bespoke williamsburg artisan vexillologist, lo-fi mlkshk four dollar toast chia hexagon art party drinking vinegar dreamcatcher. Literally meh gentrify taxidermy, 90's knausgaard butcher. Humblebrag art party pabst hella. Next level actually health goth, tacos air plant microdosing twee vexillologist portland fam. Marfa pork belly beard next level tbh slow-carb pug. Paleo selfies fanny pack la croix, farm-to-table chia post-ironic XOXO yuccie put a bird on it distillery.</p> 
         
        
         

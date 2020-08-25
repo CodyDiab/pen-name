@@ -17,6 +17,7 @@ $spacecadet2:#34345b9d;
 $mountbatenpink:#8c7d8a;
 $mountbatenpinktransparent:#8c7d8a9f;
 $silverpink:#D0B8B3;
+$darktan: #a5918d;
 $isabelline:#F2E9E4;
 $isabelline2:#f8f4f1;
 $xiketic: #0E0E1B;
@@ -128,11 +129,19 @@ background-color: $silverpink;
 body.light-mode button.toggle-icons{
 background-color: $isabelline;
 }
+body.light-mode .followcount {
+    color: $spacecadet;
+}
+
 body.light-mode .following {
 color: $isabelline;
 font-weight: 700;
 font-size: 18px;
 }
+body.light-mode a {
+    color: $spacecadet;
+  }
+  
 body.light-mode .card-header {
     background-color: $isabelline2;
 }
@@ -168,13 +177,19 @@ body.dark-mode {
         color: lightblue;
         }
     }
-    .graphic {
-        /*background: $mountbatenpinktransparent;*/
+    .followcount {
+        color: $pink;
 
+    }
+    .subtitle {
+        color: $pink;
+    }
+    .about {
+        color: $isabelline;
     }
   }
   .navbar {
-    background-color: #a5918d;
+    background-color: $darktan;
   }
   
   
