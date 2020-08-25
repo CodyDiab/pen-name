@@ -53,17 +53,25 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     <div>
     <section className="section">
       <div className="container py-4">
-        <h2 className="title has-text-centered mb-6" style={{ color: '#D0B8B3' }}>
-         Viewing {userParam ? `${user.username}'s`: 'your'} profile
-        </h2>
+        
+          <h2 className="title has-text-centered mb-6" style={{ color: '#D0B8B3' }}>
+          Viewing {userParam ? `${user.username}'s`: 'your'} profile
+         </h2>
+    
         
       <div className="columns">
         <div className="column is-6">
+         
           <h4 className="title is-spaced is-4" style={{ color: '#D0B8B3' }}>
           About {userParam ? `${user.username}`: 'me'}
           </h4>
           <p className="subtitle">{user.about}Farm-to-table pitchfork shaman bespoke williamsburg artisan vexillologist, lo-fi mlkshk four dollar toast chia hexagon art party drinking vinegar dreamcatcher. Literally meh gentrify taxidermy, 90's knausgaard butcher. Humblebrag art party pabst hella. Next level actually health goth, tacos air plant microdosing twee vexillologist portland fam. Marfa pork belly beard next level tbh slow-carb pug. Paleo selfies fanny pack la croix, farm-to-table chia post-ironic XOXO yuccie put a bird on it distillery.</p> 
+        
+       
+        
+        
         <div>
+
           <div className="media">
             <div className="media-left"><figure className=""><FontAwesomeIcon icon={faEnvelope} size="lg" alt="Email" style={{ color: '#D0B8B3'}}/></figure></div>
               <div className="media-content">
