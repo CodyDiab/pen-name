@@ -24,7 +24,7 @@ const typeDefs = gql`
     type User {
         _id: ID
         username: String
-        about: String
+        aboutText: String
         linkToPortfolio: String
         email: String
         followerCount: Int
@@ -46,6 +46,7 @@ const typeDefs = gql`
         addPost(postText: String!,title:String): Post
         addComment(postId: ID!, commentBody: String!): Post
         addFollower(followerId: ID!): User
+        addAbout( aboutText: String):User
     }
 
     type Auth {

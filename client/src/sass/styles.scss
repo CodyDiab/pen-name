@@ -58,6 +58,7 @@ $control-border-width: 2px;
 $input-border-color:$silverpink, transparent;
 $input-shadow: none;
 $button-background-color:$mountbatenpink;
+$modal-z:1;
 // $tag-background-color:$mountbatenpink;
 
 
@@ -310,7 +311,8 @@ body.dark-mode .tabs ul {
       background-color: #f6f6f6;
     }
   }
-
+  
+ 
 @media only screen and (max-width:600px) {
   /*html {
       background-color: $raisin-black;
