@@ -8,7 +8,7 @@ import { QUERY_POSTS, QUERY_ME } from '../utils/queries';
 
 const PostForm = () => {
   
-  const [postText, setText] = useState('');
+  // const [postText, setText] = useState('');
   const [formState, setFormState] = useState({ title: '', postText: ''});
   const [characterCount, setCharacterCount] = useState(0);
   const [addPost, { error }] = useMutation(ADD_POST, {
@@ -55,7 +55,7 @@ const PostForm = () => {
         variables: { ...formState}
       });
       document.location.replace('/')
-      // clear form value
+      console.log(data)
      setFormState('')
     //   setText('');
     //   setCharacterCount(0);

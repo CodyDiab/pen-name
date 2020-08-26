@@ -3,8 +3,8 @@ import { QUERY_POSTS, QUERY_ME_BASIC } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
 import Auth from '../utils/auth';
 import Feed from '../components/MainFeed';
-import PostForm from '../components/PostForm';
-import FollowerList from '../components/FollowerList';
+// import PostForm from '../components/PostForm';
+// import FollowerList from '../components/FollowerList';
 
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
   // console.log(posts);
  
 
-  const loggedIn = Auth.loggedIn();
+  // const loggedIn = Auth.loggedIn();
 
   return (
     

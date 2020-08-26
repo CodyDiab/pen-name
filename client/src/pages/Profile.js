@@ -99,10 +99,10 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
         <div className="column is-6">
          {!user.aboutText? (
             <h4 className="title is-spaced is-4" style={{ color: '#D0B8B3' }}>
-            About{userParam ? ` ${user.username}`: ' me'}
+            {/* About{userParam ? ` ${user.username}`: ' me'}
             <section>
            {userParam ? <p></p> : <button className="button" onClick={() => setModalOpen(true)}>Add About</button>}
-           </section>
+           </section> */}
           </h4>
            
          ):(

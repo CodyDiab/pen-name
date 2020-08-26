@@ -109,7 +109,7 @@ const Header = () => {
        <div id="navMenu" className="navbar-menu is-active "> 
         <div className="navbar-start">
           
-          {Auth.loggedIn() ? (
+          {Auth.loggedIn()? (
             <>
             
             <Link className="navbar-item" to="/profile" onClick={toggleNav}>Profile</Link>
@@ -118,7 +118,9 @@ const Header = () => {
              Logout
             </Link>
             <div className="navbar-end">
-            <span className="navbar-item">Logged in as {userData.me.username}</span>
+            {userData.me?(
+              <span className="navbar-item">Logged in as {userData.me.username}</span>
+            ):(<span></span>)}
             </div>
             </>
             

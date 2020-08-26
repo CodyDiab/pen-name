@@ -9,6 +9,9 @@ const userSchema = new Schema(
       unique: true,
       trim: true
     },
+    aboutText:{
+      type:String
+    },
     email: {
       type: String,
       required: true,
