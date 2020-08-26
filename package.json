@@ -27,7 +27,6 @@
   "homepage": "https://github.com/CodyDiab/pen-name#readme",
   "dependencies": {
     "if-env": "^1.0.4"
-   
   },
   "devDependencies": {
     "concurrently": "^5.2.0"
