@@ -44,7 +44,7 @@ const Profile = () => {
     try {
       
         await addAbout({
-        variables:{aboutText}
+        variables:aboutText
       });
     } catch (e) {
       console.error(e);
