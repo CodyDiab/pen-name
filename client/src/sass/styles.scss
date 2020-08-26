@@ -312,7 +312,12 @@ body.dark-mode .tabs ul {
     }
   }
   
- 
+  @media only screen and (max-width: 1023px) {
+
+    body.light-mode div #navMenu {
+      background-color: $darktan;
+  }
+}
 @media only screen and (max-width:600px) {
   /*html {
       background-color: $raisin-black;
