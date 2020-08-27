@@ -20,6 +20,7 @@ const PostForm = () => {
           query: QUERY_POSTS,
           data: { posts: [addPost, ...posts] }
         });
+       
       } catch (e) {
         console.error(e);
       }

@@ -1,62 +1,17 @@
 import React, {useState} from 'react';
-import { useParams } from 'react-router-dom'; //Redirect,
+// import { useParams } from 'react-router-dom'; //Redirect,
 import { Link } from 'react-router-dom';
-import { useQuery} from '@apollo/react-hooks';
-import {QUERY_ME_BASIC,QUERY_POSTS} from '../../utils/queries';
+// import { useQuery} from '@apollo/react-hooks';
+// import {QUERY_ME_BASIC,QUERY_POSTS} from '../../utils/queries';
 import Auth from '../../utils/auth'
 
 const Feed = ({ posts,userData}) => {
-  // const {username: userParam} = useParams();
-  // const {data:userData} = useQuery( QUERY_ME_BASIC);
-  // const user = data?.me;
-  // const following = user.followers
-//  console.log(userData)
+  
   const [viewFollowing, setViewFollowing] = useState(false);
   var followingUsers =[]
 
  
-  // const {data:followPosts} = useQuery(  QUERY_POSTS,
-  //   {variables: {username: followingUsers}}
-  // );
-  // function byFollowing(posts) {
-  //   return posts.username == user.followers.username 
-  // }
-  
- 
-//   if(userData){
 
-
-//   userData.me.followers.map( follower => followingUsers.push(follower.username))
-//   console.log(followingUsers)
- 
-//   const sortByFollowing = (array) => {
-    
-//     const sorted = []
-//     array.forEach(e => {
-//       let sort = posts.filter(post => post.username == e)
-//       sorted.push(sort)
-//     });
-
-//      return sorted
-   
-//   }
-//   console.log(sortByFollowing(followingUsers))
-//   const preSort = sortByFollowing(followingUsers)
-
-//   const joinFollowPosts = (array) => {
-//     const outPut = []
-//     array.forEach(e => {
-//       e.forEach(el => {
-//         outPut.push(el)
-//       })
-//     })
-//     return outPut
-//   }
-//    console.log(joinFollowPosts(preSort))
-// // const sortedByFollowing=(joinFollowPosts(preSort))
-//   }
-  
-  // const followPosts = posts.filter((posts) => posts.username === followers);
 
  
   if (!posts.length) {

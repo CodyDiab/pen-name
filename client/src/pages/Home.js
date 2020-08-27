@@ -1,7 +1,7 @@
 import React from 'react';
 import { QUERY_POSTS, QUERY_ME_BASIC } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 import Feed from '../components/MainFeed';
 // import PostForm from '../components/PostForm';
 // import FollowerList from '../components/FollowerList';
