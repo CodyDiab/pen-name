@@ -26,10 +26,24 @@ const Profile = () => {
   //edit text example
   const [editing] = useState(false);
   const [value, setValue] = useState("This is a sample text.");
+  const [addAbout, { error }] = useMutation(ADD_ABOUT) 
+
+  const handleSaveAbout = async (aboutText) => {
+    try{
+      await addAbout({
+        variables: aboutText
+      });
+      console.log(aboutText)
+      console.log(user)
+    } catch (e) {
+      console.error(e)
+    }
+  };
 
   const handleSave = value => {
     console.log('Edited Value -> ', value);
     setValue(value);
+    handleSaveAbout(value)
   };
   //
 
@@ -84,7 +98,8 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
 
           <div className="subtitle about">
             {/*  Apply your changes below */}
-            <EdiText
+            {userParam? <p> {user.aboutText}
+            </p> :<EdiText
             viewContainerClassName='about-wrapper'
             type='textarea'
             inputProps={{
@@ -93,11 +108,11 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
             saveButtonContent={<strong>Apply</strong>}
             cancelButtonContent={<strong>Cancel</strong>}
             editButtonContent='Edit About Section'
-            value="I'm baby master cleanse poutine scenester actually paleo butcher pork belly truffaut fixie. Whatever unicorn squid pug skateboard lomo. Enamel pin 3 wolf moon you probably haven't heard of them sriracha. Authentic brunch affogato post-ironic man braid."
+            value={user.aboutText}
               editing={editing}
               onSave={handleSave}
-            />
-      </div>
+            />}
+      </div> 
       
         
         <div>
