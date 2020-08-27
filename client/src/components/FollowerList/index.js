@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const FollowerList = ({ followerCount, username, followers }) => {
   if (!followers || !followers.length) {
-    return <p className="bg-dark text-light p-3">{username}, follow some writers!</p>;
+    return <p className="bg-dark text-light p-3">{username} isnt following any writers</p>;
   }
 
   return (
