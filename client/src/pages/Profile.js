@@ -5,7 +5,7 @@ import { useQuery, useMutation} from '@apollo/react-hooks';
 import { QUERY_USER,QUERY_ME} from '../utils/queries';
 import { ADD_FOLLOWER,ADD_ABOUT} from '../utils/mutations';
 import FollowerList from '../components/FollowerList';
-import PostForm from '../components/PostForm';
+// import PostForm from '../components/PostForm';
 import Auth from '../utils/auth';
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faBookReader } from "@fortawesome/free-solid-svg-icons";
