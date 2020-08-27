@@ -11,7 +11,7 @@ const ProfilePostList = ({ posts, title }) => {
   return (
     <section className="section">
       <div className="container py-4">
-        <h3 className="title has-text-left mb-3" style={{ color: '#D0B8B3' }}>{title}</h3>
+        <h3 className="title has-text-left mb-3">{title}</h3>
         <div className="mb-6" >
         
         {posts &&
