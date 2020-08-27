@@ -11,6 +11,8 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faBookReader } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import EdiText from 'react-editext';
+import StripeCheckout from 'react-stripe-checkout'
+
 
 const Profile = () => {
   
@@ -123,29 +125,20 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
           <span>Follow</span>
        </button>
        )}
-      <div className="col-12 col-lg-3 mb-1">
+        <div className="col-12 col-lg-3 mb-1">
           <FollowerList
             username={user.username}
             followerCount={user.followerCount}
             followers={user.followers}
           />
-          {/* <form action="/charge" method="POST">
-            <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="{{stripePublishableKey}}"
-              data-amount="1000"
-              data-name="Hire Writer"
-              data-description="Personal Writer"
-              data-image="/img/marketplace.png"
-              data-locale="auto">
-            </script>
-            <script>
-              document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
-            </script>
-            <button type="submit" className='button is-normal'>Hire For $10</button>
-          </form> */}
-          
-          </div>
+        </div>
+        <StripeCheckout>
+          <button className='button is-normal'>
+            Hire This Author
+          </button>
+        </StripeCheckout>
+
+
 
       </div>
       </div>
