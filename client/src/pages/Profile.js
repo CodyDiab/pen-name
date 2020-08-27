@@ -84,6 +84,7 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
 
           <div className="subtitle about">
             {/*  Apply your changes below */}
+            {userParam? <p>I'm baby master cleanse poutine scenester actually paleo butcher pork belly truffaut fixie. Whatever unicorn squid pug skateboard lomo. Enamel pin 3 wolf moon you probably haven't heard of them sriracha. Authentic brunch affogato post-ironic man braid.</p> :
             <EdiText
             viewContainerClassName='about-wrapper'
             type='textarea'
@@ -97,6 +98,7 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
               editing={editing}
               onSave={handleSave}
             />
+          }
       </div>
       
         
