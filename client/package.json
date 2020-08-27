@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",
+  "engines": {
+    "node": "12.16.3"
+  },
   "dependencies": {
     "use-dark-mode": "latest",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
@@ -24,7 +27,7 @@
     "react-scripts": "^3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start && npm run css-watch",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
