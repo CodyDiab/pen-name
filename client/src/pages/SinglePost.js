@@ -27,18 +27,18 @@ const SinglePost = props => {
   return (
 
     <div>
-      <div style={{ marginTop:'25px', border: '1px solid #F2E9E4'}}>
-        <div className='card' style={{ backgroundColor:'#8C7D8A' }}>
+      <div style={{ marginTop:'25px'}}>
+        <div className='card'>
           <p className='title has-text-centered'>
-            <Link to={`/profile/${post.username}`} style={{ color:'#D0B8B3' }}>{post.username}</Link>
+            <Link className="single-post-user" to={`/profile/${post.username}`}>{post.username}</Link>
           </p>
-          <p className='subtitle has-text-centered' style={{ color:'#F2E9E4' }}>
-            post on {post.createdAt}
+          <p className='subtitle has-text-centered single-post-subtitle' style={{ color:'#F2E9E4' }}>
+            posted on {post.createdAt}
           </p>
           
           <div className='card-content'>
-            <p style={{ color:'#F2E9E4' }} className="title">{post.title}</p>
-            <p style={{ color:'#F2E9E4' }}>{post.postText}</p>
+            <p  className="title">{post.title}</p>
+            <p >{post.postText}</p>
           </div>
         </div>
       </div>

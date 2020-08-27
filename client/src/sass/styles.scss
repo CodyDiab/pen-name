@@ -25,7 +25,7 @@ $xiketic: #0E0E1B;
 // Update Bulma's global variables
 $family-sans-serif: "Poppins", sans-serif;
 $family-cursive: "Pacifico", cursive;
-$grey-dark: $brown;
+$grey-dark: $raisin-black;
 $grey-light: $beige-light;
 $primary: $purple;
 $link: $spacecadet;
@@ -114,6 +114,10 @@ body {
     display: flex;
     justify-content: center;
 }
+.post-title {
+    font-weight: 700;
+    font-size: 20px;
+}
 body.light-mode {
     background-color: $isabelline;
     color: #333;
@@ -125,7 +129,13 @@ background-color: $isabelline2;
 
 body.light-mode button {
 background-color: $silverpink;
+font-weight: 700;
 
+}
+body.light-mode button:hover {
+    background-color: $isabelline2;
+    color: $darktan;
+    border-color: $darktan;
 }
 body.light-mode button.toggle-icons{
 background-color: $isabelline;
@@ -142,27 +152,55 @@ font-size: 18px;
 body.light-mode a {
     color: $spacecadet;
   }
+  body.light-mode a.burger {
+    color: $isabelline2;
+  }
+  body.light-mode a.navbar-item {
+    color: $isabelline;
+  }
+  body.light-mode span.navbar-item {
+    color: $isabelline;
+  }
   
 body.light-mode .card-header {
-    background-color: $isabelline2;
+    background-color: $isabelline;
 }
 body.light-mode .card-footer {
-    background-color: $isabelline2;
-    border-top-color:$isabelline2;
+    background-color: $isabelline;
+    border-top-color:$isabelline;
 }
 body.dark-mode .card-content {
     background-color: $xiketic;
 }
 body.light-mode .tag {
-    background-color: $isabelline2;
+    background-color: $isabelline;
 }
+
 body.light-mode .tabs li.is-active a {
-    color: $mountbatenpink;
+    color: $spacecadet;
+    font-weight: 700;
     border-bottom-color: $mountbatenpink;
 }
 body.light-mode .tabs li a {
     color: $mountbatenpink;
     border-bottom-color: $isabelline2;
+}
+
+body.light-mode .card {
+    background-color: $darktan;
+}
+body.light-mode .card-content {
+    background-color: $isabelline2
+}
+
+body.light-mode span.post-comments {
+    font-weight: 700
+}
+
+
+body.light-mode .single-post-user {
+    color: $silverpink;
+
 }
 body.dark-mode {
     background-color: $raisin-black;
@@ -187,6 +225,12 @@ body.dark-mode {
     }
     .about {
         color: $isabelline;
+    }
+    .card {
+        background-color: $spacecadet2;
+    }
+    .post-title {
+        color: $isabelline2;
     }
   }
   .navbar {
@@ -217,6 +261,10 @@ body.dark-mode {
     background-color: $spacecadet;
     color: $isabelline;
   }
+  body.dark-mode button:hover {
+    background-color: $xiketic;
+
+  }
   body.dark-mode button.toggle-icons{
     background-color: $raisin-black;
   }
@@ -239,6 +287,7 @@ body.dark-mode .tag {
 }
 body.dark-mode .tabs li.is-active a {
     color: $pink;
+    font-weight: 700;
     border-bottom-color: $isabelline2;
 }
 body.dark-mode .tabs li a {
@@ -311,7 +360,35 @@ body.dark-mode .tabs ul {
       background-color: #f6f6f6;
     }
   }
+
+//about me
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
   
+  .about-wrapper div:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+  }
+  button.styles_Editext__button__6H8n_ {
+    border-radius: 4px;
+    border-width: 2px;
+    border-color: #dbdbdb
+  }
+  body.dark-mode .styles_Editext__save_button__3WN6q {
+    color: darkgreen;
+    margin-right: 3px;
+  }
+  body.dark-mode .styles_Editext__cancel_button__259hb {
+    color: crimson;
+}
+body.dark-mode .subtitle strong {
+    color: $silverpink;
+}
   @media only screen and (max-width: 1023px) {
 
     body.light-mode div #navMenu {
@@ -323,4 +400,8 @@ body.dark-mode .tabs ul {
       background-color: $raisin-black;
       background-image: none;
     }*/
+
+    .single-post-subtitle {
+        font-size: 16px;
+    }
   }

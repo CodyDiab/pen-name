@@ -81,14 +81,14 @@ if(!viewFollowing) {
           <section className="section">
           <div key={post._id} className="card">
             <p className="card-header">
-        <Link className="" to={`/post/${post._id}`}>{post.title}</Link>
+        <Link className="post-title" to={`/post/${post._id}`}>{post.title}</Link>
               
             </p>
             <div className="card-content">
 
               <Link to={`/post/${post._id}`}>
-                <p>{post.postText}</p>
-                <span className="tag is-rounded">
+                <p className="post-text">{post.postText}</p>
+                <span className="post-comments">
                 Comments: {post.commentCount} || Click to{' '}
                   {post.commentCount ? 'see' : 'start'} the discussion!
                 </span>
@@ -165,14 +165,14 @@ console.log(sortedByFollowing);
                   <section className="section">
                   <div key={post._id} className="card">
                     <p className="card-header">
-                <Link className="" to={`/post/${post._id}`}>{post.title}</Link>
+                <Link className="post-title" to={`/post/${post._id}`}>{post.title}</Link>
                       
                     </p>
                     <div className="card-content">
         
                       <Link to={`/post/${post._id}`}>
-                        <p>{post.postText}</p>
-                        <p className="tag is-rounded">
+                        <p className="post-text">{post.postText}</p>
+                        <p className="post-comments">
                         Comments: {post.commentCount} || Click to{' '}
                           {post.commentCount ? 'see' : 'start'} the discussion!
                         </p>

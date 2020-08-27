@@ -36,7 +36,7 @@ const CommentForm = ({ postId }) => {
 
   return (
     <div>
-      <p className={`${characterCount === 280 }`} style={{ color:'#F2E9E4' }}>
+      <p className={`${characterCount === 280 }`}>
         Character Count: {characterCount}/280
         {error && <span className="ml-2">Something went wrong...</span>}
       </p>

@@ -12,7 +12,6 @@
     "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed"
-    
   },
   "repository": {
     "type": "git",
@@ -26,7 +25,8 @@
   },
   "homepage": "https://github.com/CodyDiab/pen-name#readme",
   "dependencies": {
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "react-editext": "^3.17.0"
   },
   "devDependencies": {
     "concurrently": "^5.2.0"
