@@ -28,13 +28,12 @@ const Profile = () => {
   const [value, setValue] = useState("This is a sample text.");
   const [addAbout] = useMutation(ADD_ABOUT) 
 
-  const handleSaveAbout = async (aboutText) => {
+  const handleSaveAbout = async (value) => {
     try{
       await addAbout({
-        variables: aboutText
+        variables:{aboutText:value}
       });
-      console.log(aboutText)
-      console.log(user)
+    
     } catch (e) {
       console.error(e)
     }
