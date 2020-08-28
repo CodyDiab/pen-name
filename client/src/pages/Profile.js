@@ -26,7 +26,7 @@ const Profile = () => {
   //edit text example
   const [editing] = useState(false);
   const [value, setValue] = useState("This is a sample text.");
-  const [addAbout, { error }] = useMutation(ADD_ABOUT) 
+  const [addAbout] = useMutation(ADD_ABOUT) 
 
   const handleSaveAbout = async (aboutText) => {
     try{
