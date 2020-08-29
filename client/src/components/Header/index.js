@@ -118,7 +118,7 @@ const Header = () => {
              Logout
             </Link>
             <div className="navbar-end">
-            {userData.me?(
+            {userData?(
               <span className="navbar-item">Logged in as {userData.me.username}</span>
             ):(<span></span>)}
             </div>

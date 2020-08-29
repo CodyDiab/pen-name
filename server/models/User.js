@@ -9,9 +9,7 @@ const userSchema = new Schema(
       unique: true,
       trim: true
     },
-    aboutText:{
-      type:String
-    },
+   
     email: {
       type: String,
       required: true,
@@ -22,6 +20,12 @@ const userSchema = new Schema(
       type: String,
       required: true,
       minlength: 5
+    },
+    aboutText:{
+      type: String
+       
+      
+      
     },
     posts: [
       {

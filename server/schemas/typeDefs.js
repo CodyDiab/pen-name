@@ -21,11 +21,11 @@ const typeDefs = gql`
         username: String
     }
 
+
     type User {
         _id: ID
         username: String
         aboutText: String
-        linkToPortfolio: String
         email: String
         followerCount: Int
         posts: [Post]
