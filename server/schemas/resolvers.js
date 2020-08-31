@@ -29,8 +29,6 @@ const resolvers = {
         users: async () => {
             return User.find()
                 .select('-__v -password')
-                .populate('aboutText')
-                .populate('linkToPortfolio')
                 .populate('followers')
                 .populate('posts');
         },
@@ -38,8 +36,6 @@ const resolvers = {
         user: async (parent, { username }) => {
             return User.findOne({ username })
                 .select('-__v -password')
-                .populate('aboutText')
-                .populate('linkToPortfolio')
                 .populate('followers')
                 .populate('posts');
         },
@@ -118,11 +114,12 @@ const resolvers = {
         },
         addAbout: async (parent,args, context) => {
             if (context.user) {
-             return await User.findOneAndUpdate(context.user._id,args, {new:true});
-            
+             const updatedUser = await User.findByIdAndUpdate(context.user._id,args, {new:true});
+            return updatedUser;
         }
         throw new AuthenticationError('Not logged in');
     }
+
   }
 };
 

@@ -77,6 +77,7 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     } catch (e) {
       console.error(e)
     }
+    console.log(user)
   };
 
   return (

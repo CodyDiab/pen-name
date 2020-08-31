@@ -25,8 +25,8 @@ const typeDefs = gql`
     type User {
         _id: ID
         username: String
-        aboutText: String
         email: String
+        aboutText: String
         followerCount: Int
         posts: [Post]
         followers: [User]
