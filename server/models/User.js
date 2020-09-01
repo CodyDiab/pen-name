@@ -22,8 +22,8 @@ const userSchema = new Schema(
       minlength: 5
     },
     aboutText:{
-      type: String,
-      minlength:1
+      type: String
+     
        
       
       

@@ -112,9 +112,9 @@ const resolvers = {
         
         throw new AuthenticationError('You need to be logged in!');
         },
-        addAbout: async (parent,args, context) => {
+        addAbout: async (parent,{aboutText}, context) => {
             if (context.user) {
-             const updatedUser = await User.findOneAndUpdate(context.user._id,args, {new:true});
+             const updatedUser = await User.findByIdAndUpdate(context.user._id,{aboutText:aboutText}, {new:true});
             return updatedUser;
         }
         throw new AuthenticationError('Not logged in');
