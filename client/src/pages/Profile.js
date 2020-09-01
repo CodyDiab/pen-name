@@ -101,7 +101,7 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
             {/*  Apply your changes below */}
             {userParam? <p> {user.aboutText}
             </p> :<EdiText
-            viewContainerClassName='about-wrapper'
+            viewContainerClassName='about-wrapper post-text'
             type='textarea'
             inputProps={{
               rows: 5
