@@ -37,6 +37,7 @@ const Profile = () => {
     } catch (e) {
       console.error(e)
     }
+    
   };
 
   const handleSave = value => {
@@ -50,7 +51,7 @@ const Profile = () => {
   ////////////////////////////////////////////////////////////////
   
   const user = data?.me||data?.user || {};
-  console.log(user)
+  console.log(user.aboutText)
   
 //   // redirect to personal profile page if username is the logged-in user's
 //if (Auth.loggedIn() && Auth.getProfile().data.username.toLowerCase() === userParam.toLowerCase()) {
@@ -77,7 +78,7 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     } catch (e) {
       console.error(e)
     }
-    console.log(user)
+   
   };
 
   return (

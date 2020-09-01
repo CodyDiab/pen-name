@@ -9,8 +9,6 @@ const resolvers = {
         if (context.user) {
             const userData = await User.findOne({ _id: context.user._id })
             .select('-__v -password')
-            .populate('aboutText')
-            .populate('linkToPortfolio')
             .populate('posts')
             .populate('followers');
         
@@ -114,7 +112,8 @@ const resolvers = {
         },
         addAbout: async (parent,{aboutText}, context) => {
             if (context.user) {
-             const updatedUser = await User.findByIdAndUpdate(context.user._id,{aboutText:aboutText}, {new:true});
+            
+             const updatedUser = await User.findOneAndUpdate({_id: context.user._id},{aboutText:aboutText}, {new:true});
             return updatedUser;
         }
         throw new AuthenticationError('Not logged in');
