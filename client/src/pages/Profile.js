@@ -86,21 +86,24 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     <section className="section">
       <div className="container py-4">
         
-          <h2 className="title has-text-centered mb-6" style={{ color: '#D0B8B3' }}>
+          <h2 className="title has-text-centered mb-6">
           Viewing {userParam ? `${user.username}'s`: 'your'} profile
          </h2>
     
         
       <div className="columns">
         <div className="column is-6">
-        <h4 className="title is-spaced is-4" style={{ color: '#D0B8B3' }}>
+        <h4 className="title is-spaced is-4" >
           About {userParam ? `${user.username}`: 'me'}
           </h4>
 
           <div className="subtitle about">
             {/*  Apply your changes below */}
+
             {userParam? <p> {user.aboutText}
             </p> :<EdiText
+
+            
             viewContainerClassName='about-wrapper'
             type='textarea'
             inputProps={{
@@ -112,8 +115,10 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
             value={user.aboutText}
               editing={editing}
               onSave={handleSave}
+
             />}
       </div> 
+
       
         
         <div>
@@ -132,7 +137,7 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
       
       <div className="column is-5 is-offset-1 follow">
       {userParam && (
-        <button className="button is-inverted is-outlined mb-5" onClick={handleClick}>
+        <button className="button is-inverted is-outlined mb-5 " onClick={handleClick}>
           <span className=" pr-3"><FontAwesomeIcon icon={faBookReader} size="" alt="Follow"></FontAwesomeIcon></span>
           <span>Follow</span>
        </button>
@@ -167,7 +172,7 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
       </section>
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8" >
-          <ProfilePostList posts={user.posts} title={`${user.username}'s posts`}/>
+          <ProfilePostList  posts={user.posts} title={`${user.username}'s posts`}/>
         </div>
 
         

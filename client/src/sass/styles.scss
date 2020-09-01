@@ -101,7 +101,6 @@ body {
     height:80px;
     margin-right: 10px;
 }
-
 /*#home-body{
     background-color:$raisin-black;
 }*/
@@ -132,84 +131,116 @@ background-color: $silverpink;
 font-weight: 700;
 
 }
+body.light-mode .following {
+    color: $isabelline;
+    font-weight: 700;
+    font-size: 18px;
+}
 body.light-mode button:hover {
     background-color: $isabelline2;
     color: $darktan;
     border-color: $darktan;
 }
+body.light-mode .following:hover {
+
+    color: $darktan;
+
+}
 body.light-mode button.toggle-icons{
 background-color: $isabelline;
 }
-body.light-mode .followcount {
-    color: $spacecadet;
-}
-
-body.light-mode .following {
-color: $isabelline;
-font-weight: 700;
-font-size: 18px;
-}
-body.light-mode a {
-    color: $spacecadet;
-  }
-  body.light-mode a.burger {
-    color: $isabelline2;
-  }
-  body.light-mode a.navbar-item {
-    color: $isabelline;
-  }
-  body.light-mode span.navbar-item {
-    color: $isabelline;
-  }
-  
-body.light-mode .card-header {
-    background-color: $isabelline;
-}
-body.light-mode .card-footer {
-    background-color: $isabelline;
-    border-top-color:$isabelline;
-}
-body.dark-mode .card-content {
-    background-color: $xiketic;
-}
-body.light-mode .tag {
-    background-color: $isabelline;
-}
-
-body.light-mode .tabs li.is-active a {
-    color: $spacecadet;
-    font-weight: 700;
-    border-bottom-color: $mountbatenpink;
-}
-body.light-mode .tabs li a {
-    color: $mountbatenpink;
-    border-bottom-color: $isabelline2;
-}
-
-body.light-mode .card {
-    background-color: $darktan;
-}
-body.light-mode .card-content {
-    background-color: $isabelline2
-}
-
-body.light-mode span.post-comments {
-    font-weight: 700
-}
 
 
-body.light-mode .single-post-user {
-    color: $silverpink;
 
+body.light-mode {
+    .followcount {
+        color: $spacecadet;
+    }
+    
+    
+    a {
+        color: $spacecadet;
+      }
+       a.burger {
+        color: $isabelline2;
+      }
+      a.navbar-item {
+        color: $isabelline;
+      }
+      a.navbar-item:hover {
+        color: $darktan;
+        font-weight: 700;
+      }
+      span.navbar-item {
+        color: $isabelline;
+      }
+    .tag {
+        background-color: $isabelline;
+    }
+    .tabs li.is-active a {
+        color: $spacecadet;
+        font-weight: 700;
+        border-bottom-color: $mountbatenpink;
+    }
+    .tabs li a {
+        color: $mountbatenpink;
+        border-bottom-color: $isabelline2;
+    }
+    .title {
+        color: $darktan;
+    }
+    .post-title {
+        color: $mountbatenpink;
+    }
+    .card {
+        background-color: $darktan;
+    }
+    .card-header {
+        background-color: $isabelline;
+    }
+    .card-content {
+        background-color: $isabelline2
+    }
+    .card-footer {
+        background-color: $isabelline;
+        border-top-color:$isabelline;
+    }
+    .comment-date {
+        color: $silverpink;
+    }
+    .single-post-user {
+        color: $isabelline;
+    
+    }
+    span.post-comments {
+        font-weight: 700
+    }
+    .comment-section{
+        color: $isabelline2;
+        padding-top: 12px;
+    }
+    .comment-date {
+        color: $darktan;
+    }
+    .comment-date p {
+        color: $raisin-black;
+    }
+    
 }
 body.dark-mode {
     background-color: $raisin-black;
     color: #dfdfdf;
-
+    a {
+        color: $pink;
+    }
     .navbar {
         background-color: $spacecadet;
     }
-
+    a.navbar-item:hover {
+        color: $isabelline2;
+        font-weight: 700;
+        background-color: $xiketic;
+      }
     .dark-mode-toggle > button {
         color: #999;
         &:last-child {
@@ -220,6 +251,9 @@ body.dark-mode {
         color: $pink;
 
     }
+    .title {
+        color: $silverpink;
+    }
     .subtitle {
         color: $pink;
     }
@@ -229,94 +263,96 @@ body.dark-mode {
     .card {
         background-color: $spacecadet2;
     }
+    .card-content {
+        background-color: $xiketic;
+    } 
     .post-title {
         color: $isabelline2;
     }
-  }
-  .navbar {
-    background-color: $darktan;
-  }
-  
-  
-  .container {
-    padding: 20px;
-  }
-  
-  body.dark-mode a {
-    color: $pink;
-  }
-  body.dark-mode .following {
-    color: $mountbatenpink;
-    font-weight: 700;
-    font-size: 18px;
-  }
-  body.dark-mode .comments {
+    .comment-date {
+        color: $silverpink;
+    }
+    .following {
+        color: $mountbatenpink;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    .comments {
     color: $pink;
     
-  }
-  body.dark-mode p {
-    color: $isabelline;
-  }
-  body.dark-mode button {
-    background-color: $spacecadet;
-    color: $isabelline;
-  }
-  body.dark-mode button:hover {
-    background-color: $xiketic;
-
-  }
-  body.dark-mode button.toggle-icons{
-    background-color: $raisin-black;
-  }
-  body.dark-mode .box {
-    background-color: $spacecadet;
-}
-body.dark-mode .card-header {
-    background-color: $spacecadet;
-}
-body.dark-mode .card-footer {
-    background-color: $spacecadet;
-    border-top-color:$spacecadet;
-}
-body.dark-mode .card-content {
-    background-color: $xiketic;
-}
-body.dark-mode .tag {
-    background-color: $spacecadet;
-    color: $isabelline2;
-}
-body.dark-mode .tabs li.is-active a {
-    color: $pink;
-    font-weight: 700;
-    border-bottom-color: $isabelline2;
-}
-body.dark-mode .tabs li a {
-    color: $mountbatenpink;
-    border-bottom-color: $mountbatenpink;
-}
-
-body.dark-mode .tabs ul {
-    border-bottom-color:$raisin-black;
-}
-  .dark-mode-toggle {
-    display: flex;
-    margin: 0 auto;
-    & > button {
-      font-size: 1.2em;
-      background: none;
-      border: none;
-      color: #ffc400;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      &:last-child {
-        color: #666;
-      }
-  
-      &:focus {
-        outline: none;
-      }
     }
-  }
+    p {
+    color: $isabelline;
+    }
+    button {
+    background-color: $spacecadet;
+    color: $isabelline;
+    }
+    button:hover {
+    background-color: $xiketic;
+    color: $pink ;
+    }
+    button.toggle-icons{
+    background-color: $raisin-black;
+    }
+    .box {
+    background-color: $spacecadet;
+    }
+    .card-header {
+        background-color: $spacecadet;
+    }
+    .card-footer {
+        background-color: $spacecadet;
+        border-top-color:$spacecadet;
+    }
+    .card-content {
+        background-color: $xiketic;
+    }
+    .tag {
+        background-color: $spacecadet;
+        color: $isabelline2;
+    }
+    .tabs li.is-active a {
+        color: $pink;
+        font-weight: 700;
+        border-bottom-color: $isabelline2;
+    }
+    .tabs li a {
+        color: $mountbatenpink;
+        border-bottom-color: $mountbatenpink;
+    }
+    .tabs ul {
+        border-bottom-color:$raisin-black;
+    }
+}
+.navbar {
+background-color: $darktan;
+}
+
+
+.container {
+padding: 20px;
+}
+
+.dark-mode-toggle {
+display: flex;
+margin: 0 auto;
+& > button {
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    color: #ffc400;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    &:last-child {
+    color: #666;
+    }
+
+    &:focus {
+    outline: none;
+    }
+}
+}
   
   .toggle-control {
     position: relative;
