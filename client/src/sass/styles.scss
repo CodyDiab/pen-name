@@ -92,7 +92,7 @@ body {
 }
 .post-text {
 
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
     padding-bottom: 16px;
     font-size: 1.2rem;
@@ -100,7 +100,15 @@ body {
 .card{
     border-radius: $radius;
 }
-
+.card-header {
+    padding: 6px 12px;
+}
+.title {
+    font-weight: 500;
+}
+.subtitle {
+    font-weight: 300;
+}
 #stick{
     display: revert;
 }
@@ -123,7 +131,7 @@ body {
 }
 .post-title {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 1.5em;
 }
 body.light-mode {
     background-color: $isabelline;
@@ -140,7 +148,7 @@ font-weight: 700;
 
 }
 body.light-mode .following {
-    color: $isabelline;
+    color: $isabelline2;
     font-weight: 700;
     font-size: 18px;
 }
@@ -161,11 +169,14 @@ background-color: $isabelline;
 
 
 body.light-mode {
+    .post-text {
+        font-weight: 400;
+    }
+    
     .followcount {
         color: $spacecadet;
     }
-    
-    
+
     a {
         color: $spacecadet;
       }
@@ -447,5 +458,8 @@ body.dark-mode .subtitle strong {
 
     .single-post-subtitle {
         font-size: 16px;
+    }
+    .card-content{
+        padding: .95rem;
     }
   }

@@ -133,7 +133,7 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
       <div className="column is-5 is-offset-1 follow">
       {userParam && (
         <button className="button is-inverted is-outlined mb-5 " onClick={handleClick}>
-          <span className=" pr-3"><FontAwesomeIcon icon={faBookReader} size="" alt="Follow"></FontAwesomeIcon></span>
+          <span className=" pr-3"><FontAwesomeIcon icon={faBookReader}  alt="Follow"></FontAwesomeIcon></span>
           <span>Follow</span>
        </button>
        )}

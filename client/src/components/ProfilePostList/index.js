@@ -35,7 +35,7 @@ const ProfilePostList = ({ posts, title }) => {
                   </p>
                 <div className="content">
                   <Link to={`/post/${post._id}`}>
-                    <p className="has-text-weight-normal is-size-5 post-text">{post.postText}</p>
+                    <p className="post-text">{post.postText}</p>
                     <p className="mb-0 comments">
                     Comments: {post.commentCount} || Click to{' '}
                       {post.commentCount ? 'see' : 'start'} the discussion!
