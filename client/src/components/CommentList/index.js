@@ -13,7 +13,7 @@ const CommentList = ({ comments }) => {
                     {comments &&
                     comments.map(comment => (
                     <div className="has-text-centered comment-date" key={comment._id}>
-                        <p>
+                        <p className='post-text'>
                             {comment.commentBody}
                         </p>
                         <Link to={`/profile/${comment.username}`} style={{ fontWeight: 700}}>

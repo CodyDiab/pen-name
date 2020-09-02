@@ -9,8 +9,6 @@ const resolvers = {
         if (context.user) {
             const userData = await User.findOne({ _id: context.user._id })
             .select('-__v -password')
-            .populate('aboutText')
-            .populate('linkToPortfolio')
             .populate('posts')
             .populate('followers');
         
@@ -29,8 +27,6 @@ const resolvers = {
         users: async () => {
             return User.find()
                 .select('-__v -password')
-                .populate('aboutText')
-                .populate('linkToPortfolio')
                 .populate('followers')
                 .populate('posts');
         },
@@ -38,8 +34,6 @@ const resolvers = {
         user: async (parent, { username }) => {
             return User.findOne({ username })
                 .select('-__v -password')
-                .populate('aboutText')
-                .populate('linkToPortfolio')
                 .populate('followers')
                 .populate('posts');
         },
@@ -116,18 +110,16 @@ const resolvers = {
         
         throw new AuthenticationError('You need to be logged in!');
         },
-        addAbout: async (parent, {aboutText}, context) => {
+        addAbout: async (parent,{aboutText}, context) => {
             if (context.user) {
-                const updatedUser = await User.findOneAndUpdate(
-                    {_id: context.user._id},
-                    { $set:{aboutText:aboutText}},
-                    {new:true}
-                ).populate('aboutText');
-
-                return updatedUser;
-            }
+            
+             const updatedUser = await User.findOneAndUpdate({_id: context.user._id},{aboutText:aboutText}, {new:true});
+            return updatedUser;
         }
+        throw new AuthenticationError('Not logged in');
     }
+
+  }
 };
 
 module.exports = resolvers;

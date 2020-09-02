@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import {TOGGLE_NAV} from '../../utils/actions';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
@@ -66,7 +66,7 @@ const Header = () => {
             <nav className="navbar  is-fixed-top" role="navigation" aria-label="main navigation">
             <div className="navbar-brand" >
               <Link to="/" className="logo">
-              <img className="graphic"src={require("../../resources/PenNameGraphicLight.svg")}></img>
+              <img className="graphic"src={require("../../resources/PenNameGraphicLight.svg")} alt=""></img>
                 {/* <h1 className="main-title">Pen Name</h1>*/ }
                 </Link>
               
@@ -118,7 +118,7 @@ const Header = () => {
              Logout
             </Link>
             <div className="navbar-end">
-            {userData.me?(
+            {userData?(
               <span className="navbar-item">Logged in as {userData.me.username}</span>
             ):(<span></span>)}
             </div>

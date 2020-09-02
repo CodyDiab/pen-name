@@ -38,7 +38,7 @@ const SinglePost = props => {
           
           <div className='card-content'>
             <p  className="title">{post.title}</p>
-            <p >{post.postText}</p>
+            <p className='post-text'>{post.postText}</p>
           </div>
         </div>
       </div>
