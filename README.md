@@ -7,11 +7,22 @@
     <img src="https://img.shields.io/badge/MongoDB-yellow"/>
     <img src="https://img.shields.io/badge/Node.js/Express.js-orange"/>
     <img src="https://img.shields.io/badge/API-blue"/>
-</p>
+</p>  
 
-<p align="center">
-    <img src="./assets/main.jpg" alt="mainpage"/>
-    <img src="./assets/maindark.jpg" alt="mainpage"/>
+<h2 align="center">Mobile Phone View</h2>  
+
+<p align='center'>
+    <img src="./assets/mainmobile.jpg" alt="mobilelight"/>
+    <img src="./assets/darkmobile.jpg" alt="mobiledark"/>
+</p>  
+  
+<h2 align="center">Tablet View</h2>  
+  
+
+
+<p align='center'>
+    <img src="./assets/main.jpg" alt="tabletlight"/>
+    <img src="./assets/maindark.jpg" alt="tabletdark"/>
 </p>
 
 
@@ -22,7 +33,7 @@
 - [Questions](#questions)
 
 ## Description
-Pen Name is a social media/ blog type mobile first application, that gives users a place to share their own or favorite literary works. The user has the ability to view shared works even without logging in. If the user choices to sign up and log in then they will have the ability to follow their favorite other authors, share their own work, comment, and customize a personal profile page.  
+Pen Name is a social media/blog type mobile first application, that gives users a place to share their own or favorite literary works. The user has the ability to view shared works even without logging in. If the user choices to sign up and log in then they will have the ability to follow their favorite other authors, share their own work, comment, and customize a personal profile page.  
   
 ## Install
 If you would like to clone and use this application then clone the repo (Link found down below). Once cloned enter the root folder and ---  
@@ -46,5 +57,13 @@ Page will open in browser automatically or go to localhost:3000/
 
 
 ## Questions
-### [Mattkohl82 for GitHub](https://github.com/Mattkohl82)  
-### mattkohl82@gmail.com for ✉️ email 
+### Github's
+#### [Kaynalem for Github](https://github.com/Kaynalem)
+#### [CodyDiab for Github](https://github.com/CodyDiab)
+#### [Mattkohl82 for GitHub](https://github.com/Mattkohl82) 
+
+### Emails  
+
+#### Kaynalem@gmail.com for ✉️ email 
+#### emailcodydiab@gmail.com for ✉️ email  
+#### mattkohl82@gmail.com for ✉️ email 

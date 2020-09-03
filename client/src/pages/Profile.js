@@ -146,7 +146,12 @@ if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
             followers={user.followers}
           />
         </div>
-        <StripeCheckout>
+        <StripeCheckout
+          name="Pen Name"
+          description="Just for demo purposes"
+          image="./logo.png"
+          amount={1000}
+          >
           <button className='button is-normal'>
             Hire This Author
           </button>

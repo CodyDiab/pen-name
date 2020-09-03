@@ -4,8 +4,6 @@ const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 require('dotenv').config()
 
-const path = require('path');
-const stripe = require('stripe')('pk_test_51HFnbgC40Zmta80fdEGW47jLEH7bIn57ViPoPu4OY2wr0a4LfVNoVcJLfnazCaUALTRfoY3ciZQN6DPETIDAzU9500TbeRACnl')
 
 // import our typeDefs and resolvers
 const { typeDefs, resolvers } = require('./schemas');
