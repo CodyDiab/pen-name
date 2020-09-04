@@ -4,12 +4,11 @@ const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 require('dotenv').config()
 
-const path = require('path');
-// const stripe = require('stripe')('')
 
 // import our typeDefs and resolvers
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
+const { log } = require('console');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -34,6 +33,24 @@ if (process.env.NODE_ENV === 'production') {
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
+
+app.post('/payment', (req, res) => {
+  const {product, token} = req.body
+  console.log('PRODUCT', product)
+  console.log('PRICE', product.price)
+  
+  return stripe.customers.create({
+    email: token.email,
+    source: token.id
+  }).then(customer => {
+    stripe.charges.create({
+      amount: 1000,
+      currency: 'usd'
+    })
+  })
+  .then(result => res.status(200).json(result))
+  .catch(err => console.log(err) )
+})
 
 db.once('open', () => {
   app.listen(PORT, () => {
