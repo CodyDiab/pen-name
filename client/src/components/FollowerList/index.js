@@ -13,7 +13,7 @@ const FollowerList = ({ followerCount, username, followers }) => {
       </h5>
       {followers.map(follower => (
         <button className="button is-fullwidth is-inverted is-outlined mb-2 following" key={follower._id}>
-          <Link  className="following" to={`/profile/${follower.username}`}>{follower.username} </Link>
+          <Link  className="following" to={`/profile/${follower.username}`}> {follower.username} </Link>
         </button>
       ))}
     </div>
