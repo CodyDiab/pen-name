@@ -26,9 +26,10 @@
   "homepage": "https://github.com/CodyDiab/pen-name#readme",
   "dependencies": {
     "if-env": "^1.0.4",
-    "react-editext": "^3.17.0"
+    "react-editext": "^3.17.0",
+    "concurrently": "^5.2.0"
   },
   "devDependencies": {
-    "concurrently": "^5.2.0"
+    
   }
 }
