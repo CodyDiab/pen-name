@@ -7,7 +7,7 @@ const FollowerList = ({ followerCount, username, followers }) => {
   }
 
   return (
-    <div className="following">
+    <div className="">
       <h5 className="title is-5 mb-2 followcount" >
         {username} is following {followerCount} {followerCount === 1 ? 'writer' : 'writers'}
       </h5>
